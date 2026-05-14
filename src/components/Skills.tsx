@@ -132,15 +132,11 @@ export default function Skills() {
     <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Cinematic Dark Background with Moving Gradient Lights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          animate={{ x: ['-20%', '20%', '-20%'], y: ['-10%', '10%', '-10%'] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-0 right-1/4 w-[50vw] h-[50vw] bg-pink-600/10 blur-[150px] rounded-full mix-blend-screen" 
+        <div 
+          className="absolute top-0 right-1/4 w-[50vw] h-[50vw] bg-pink-600/10 blur-[100px] rounded-full mix-blend-screen" 
         />
-        <motion.div 
-          animate={{ x: ['20%', '-20%', '20%'], y: ['10%', '-10%', '10%'] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-1/4 w-[40vw] h-[40vw] bg-cyan-600/10 blur-[150px] rounded-full mix-blend-screen" 
+        <div 
+          className="absolute bottom-0 left-1/4 w-[40vw] h-[40vw] bg-cyan-600/10 blur-[100px] rounded-full mix-blend-screen" 
         />
       </div>
 

@@ -127,10 +127,10 @@ function PricingCard({ plan, index, handleOrder }: { plan: any; index: number; h
 
       {/* Floating Glow Behind Popular Card */}
       {plan.isPopular && (
-        <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 to-orange-500 opacity-20 blur-xl rounded-full animate-pulse z-0" />
+         <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 to-orange-500 opacity-20 blur-xl rounded-full z-0 pointer-events-none" />
       )}
 
-      <div className={`relative h-full z-10 flex flex-col rounded-[23px] bg-gradient-to-br ${plan.bgGradient} backdrop-blur-xl bg-black/80 overflow-hidden ${plan.isPopular ? 'animate-card-pulse' : ''}`}>
+      <div className={`relative h-full z-10 flex flex-col rounded-[23px] bg-gradient-to-br ${plan.bgGradient} backdrop-blur-xl bg-black/80 overflow-hidden ${plan.isPopular ? 'transform hover:-translate-y-2 transition-transform duration-300 shadow-[0_0_30px_rgba(236,72,153,0.3)]' : ''}`}>
         
         {/* Badges */}
         {plan.badge && (
@@ -195,8 +195,8 @@ export default function Pricing() {
   return (
     <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Dynamic Background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-pink-600/10 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-pink-600/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-7xl mx-auto relative z-10">
         <motion.div

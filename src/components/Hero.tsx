@@ -80,8 +80,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
         {/* Cinematic glow overlays */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/30 blur-[130px] mix-blend-screen animate-pulse" />
-        <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/20 blur-[120px] mix-blend-screen" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/30 blur-[80px] mix-blend-screen" />
+        <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/20 blur-[80px] mix-blend-screen" />
       </div>
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">

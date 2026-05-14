@@ -35,7 +35,7 @@ export default function MapSection() {
            transition={{ type: "spring", bounce: 0.6, duration: 1 }}
            className="relative"
         >
-          <div className="w-16 h-16 bg-cyan-400/20 rounded-full animate-ping absolute -inset-2" />
+          <div className="w-16 h-16 bg-cyan-400/20 rounded-full absolute -inset-2 scale-110 opacity-70" />
           <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,243,255,0.6)] relative z-10">
             <MapPin className="w-6 h-6 text-black" />
           </div>

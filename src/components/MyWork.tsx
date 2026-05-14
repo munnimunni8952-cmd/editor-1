@@ -29,12 +29,11 @@ export default function MyWork() {
       <div className="relative w-full pb-8 overflow-hidden">
         {/* Infinite Scroll Container */}
         <div className="flex w-max group">
-          <div className="flex animate-marquee gap-6 px-3 group-hover:[animation-play-state:paused]">
+          <div className="flex animate-marquee gap-6 px-3 group-hover:[animation-play-state:paused]" style={{ willChange: 'transform' }}>
             {[...INSTAGRAM_REELS, ...INSTAGRAM_REELS].map((reelSrc, index) => (
-              <motion.div
+              <div
                 key={`${index}`}
-                whileHover={{ scale: 1.05 }}
-                className="relative w-[280px] sm:w-[320px] h-[500px] sm:h-[570px] rounded-3xl overflow-hidden shrink-0 transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] glass-card border-none"
+                className="relative w-[280px] sm:w-[320px] h-[500px] sm:h-[570px] rounded-3xl overflow-hidden shrink-0 transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,243,255,0.3)] glass-card border-none"
               >
                 <iframe 
                   src={reelSrc}
@@ -44,7 +43,7 @@ export default function MyWork() {
                   loading="lazy"
                   title={`Instagram Reel ${index}`}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

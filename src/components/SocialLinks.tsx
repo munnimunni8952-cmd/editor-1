@@ -71,25 +71,21 @@ export default function SocialLinks() {
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 group-hover:border-white/20 rounded-3xl transition-colors duration-300" />
                 
                 {/* Floating Glow Behind Icon */}
-                <motion.div
-                  animate={{ opacity: [0.3, 0.6, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 blur-xl rounded-full z-0 pointer-events-none"
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 blur-lg opacity-50 rounded-full z-0 pointer-events-none group-hover:scale-110 transition-transform duration-500"
                   style={{ backgroundColor: social.glowColor }}
                 />
 
-                {/* Animated Icon Container */}
-                <motion.div 
-                  animate={{ y: [-5, 5, -5] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
-                  className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center bg-gradient-to-br ${social.gradient} p-[1px] group-hover:scale-110 transition-transform duration-500`}
+                {/* Static Icon Container */}
+                <div 
+                  className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center bg-gradient-to-br ${social.gradient} p-[1px] group-hover:-translate-y-2 group-hover:scale-105 transition-transform duration-500`}
                 >
                   <div className="w-full h-full bg-black/60 rounded-2xl flex items-center justify-center backdrop-blur-sm relative overflow-hidden">
                     {/* Inner highlight */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Icon className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Text Content */}
                 <div className="relative z-10 text-center flex items-center gap-2">
