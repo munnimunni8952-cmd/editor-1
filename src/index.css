@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #00f3ff;
+  --color-neon-purple: #b92b27; /* We'll use a cinematic red/orange tone or purple, let's use purple/pink */
+  --color-neon-pink: #ff007f;
+  --color-dark-bg: #030303;
+  --color-dark-surface: #0a0a0a;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Oswald', sans-serif;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.glass-card {
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neon-border {
+  border: 1px solid transparent;
+  background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+              linear-gradient(to right, #00f3ff, #ff007f) border-box;
+}
+
+.neon-text {
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+}
+
+@keyframes card-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(236, 72, 153, 0.2); }
+  50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(236, 72, 153, 0.5); }
+}
+
+.animate-card-pulse {
+  animation: card-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float-logo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-logo {
+  animation: float-logo 4s ease-in-out infinite;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
+  transition: filter 0.3s ease;
+}
+
+.logo-glow:hover {
+  filter: drop-shadow(0 0 25px rgba(255, 0, 127, 0.6));
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
