@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Play } from 'lucide-react';
 
 const WORDS = [
@@ -57,14 +57,31 @@ function TypewriterEffect() {
 }
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 200]);
+  const scale = useTransform(scrollY, [0, 1000], [1, 1.1]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/80 z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/20 blur-[120px] mix-blend-screen animate-pulse" />
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div 
+          style={{ y, scale }}
+          className="absolute inset-[-10%] w-[120%] h-[120%]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute inset-0 bg-[url('https://i.ibb.co/XxKqjQ9J/Gemini-Generated-Image-dluq34dluq34dluq.png')] bg-cover bg-center md:bg-top opacity-[0.55] mix-blend-screen" />
+        </motion.div>
+        
+        {/* Dark Overlays for text visibility and smooth transition to next section */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+
+        {/* Cinematic glow overlays */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/30 blur-[130px] mix-blend-screen animate-pulse" />
         <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/20 blur-[120px] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" />
       </div>
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">

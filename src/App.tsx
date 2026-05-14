@@ -14,13 +14,15 @@ import SocialLinks from './components/SocialLinks';
 import MapSection from './components/MapSection';
 import FloatingSocials from './components/FloatingSocials';
 import LoadingScreen from './components/LoadingScreen';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 export default function App() {
   return (
     <>
       <LoadingScreen />
+      
       <Navbar />
-      <main className="bg-black text-white selection:bg-cyan-500/30 font-sans">
+      <main className="relative bg-black text-white selection:bg-cyan-500/30 font-sans">
         <Hero />
         <MyWork />
         <div id="skills"><Skills /></div>
@@ -32,7 +34,7 @@ export default function App() {
         <FloatingSocials />
         
         {/* Simple Footer with Logo */}
-        <footer className="py-12 border-t border-white/5 bg-black">
+        <footer className="py-12 border-t border-white/5 relative z-10 backdrop-blur-sm bg-black/50">
           <div className="flex flex-col items-center justify-center gap-6">
             <a href="#" className="animate-float-logo logo-glow">
               <img 

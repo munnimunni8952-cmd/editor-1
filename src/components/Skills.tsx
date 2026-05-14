@@ -129,10 +129,9 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
 
 export default function Skills() {
   return (
-    <section className="py-24 relative overflow-hidden bg-black">
+    <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Cinematic Dark Background with Moving Gradient Lights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-[0.02] mix-blend-screen" />
         <motion.div 
           animate={{ x: ['-20%', '20%', '-20%'], y: ['-10%', '10%', '-10%'] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}

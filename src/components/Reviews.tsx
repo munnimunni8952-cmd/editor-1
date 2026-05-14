@@ -30,9 +30,9 @@ export default function Reviews() {
         </motion.div>
       </div>
 
-      <div className="relative w-full">
+      <div className="relative w-full overflow-hidden">
         {/* Infinite Scroll Container (Right to Left) */}
-        <div className="flex w-[200%] md:w-[150%] lg:w-max group">
+        <div className="flex w-max group">
           <div className="flex animate-marquee gap-6 px-3 group-hover:[animation-play-state:paused]" style={{ animationDuration: '35s' }}>
             {[...REVIEWS, ...REVIEWS].map((review, index) => (
               <motion.div
@@ -46,7 +46,7 @@ export default function Reviews() {
                 <div className="flex items-center gap-4 mb-6 relative z-10">
                   <div className="relative">
                     <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-30 group-hover:opacity-60 transition-opacity" />
-                    <img src={review.image} alt={review.name} className="w-14 h-14 rounded-full object-cover border border-cyan-400/20 relative z-10" />
+                    <img src={review.image} alt={review.name} loading="lazy" className="w-14 h-14 rounded-full object-cover border border-cyan-400/20 relative z-10" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-white">{review.name}</h4>

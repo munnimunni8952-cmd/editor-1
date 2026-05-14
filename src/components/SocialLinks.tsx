@@ -30,7 +30,7 @@ const SOCIAL_LINKS = [
 
 export default function SocialLinks() {
   return (
-    <section id="socials" className="py-24 relative overflow-hidden bg-black/90">
+    <section id="socials" className="py-24 relative overflow-hidden bg-transparent">
       {/* Cinematic Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-pink-600/5 via-purple-600/5 to-blue-600/5 blur-[100px] pointer-events-none" />
 
@@ -74,7 +74,7 @@ export default function SocialLinks() {
                 <motion.div
                   animate={{ opacity: [0.3, 0.6, 0.3] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 blur-xl rounded-full z-0 pointer-events-none"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 blur-xl rounded-full z-0 pointer-events-none"
                   style={{ backgroundColor: social.glowColor }}
                 />
 
@@ -82,12 +82,12 @@ export default function SocialLinks() {
                 <motion.div 
                   animate={{ y: [-5, 5, -5] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
-                  className={`relative z-10 w-24 h-24 rounded-2xl flex items-center justify-center bg-gradient-to-br ${social.gradient} p-[1px] group-hover:scale-110 transition-transform duration-500`}
+                  className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center bg-gradient-to-br ${social.gradient} p-[1px] group-hover:scale-110 transition-transform duration-500`}
                 >
                   <div className="w-full h-full bg-black/60 rounded-2xl flex items-center justify-center backdrop-blur-sm relative overflow-hidden">
                     {/* Inner highlight */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Icon className="w-10 h-10 text-white relative z-10" />
+                    <Icon className="w-8 h-8 md:w-10 md:h-10 text-white relative z-10" />
                   </div>
                 </motion.div>
 

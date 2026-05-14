@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 
 export default function MapSection() {
   return (
-    <section className="relative h-[600px] w-full bg-black overflow-hidden">
+    <section className="relative h-[600px] w-full bg-transparent overflow-hidden">
       {/* 
         Using a stylized iframe map to avoid friction with API keys.
         The CSS filter inverts colors to turn the standard map into a dark theme map,
