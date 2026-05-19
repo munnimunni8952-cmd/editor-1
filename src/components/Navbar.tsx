@@ -42,6 +42,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-sm font-medium text-gray-300">
           <a href="#work" className="hover:text-cyan-400 transition-colors">Work</a>
+          <a href="#services" className="hover:text-white transition-colors">Services</a>
           <a href="#skills" className="hover:text-purple-400 transition-colors">Skills</a>
           <a href="#pricing" className="hover:text-pink-400 transition-colors">Pricing</a>
           <a href="#socials" className="hover:text-cyan-400 transition-colors">Socials</a>
@@ -74,6 +75,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
           >
             <a href="#work" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-cyan-400 transition-colors">Work</a>
+            <a href="#services" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-white transition-colors">Services</a>
             <a href="#skills" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
             <a href="#pricing" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-pink-400 transition-colors">Pricing</a>
             <a href="#socials" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-cyan-400 transition-colors">Socials</a>

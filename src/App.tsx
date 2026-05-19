@@ -6,6 +6,8 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MyWork from './components/MyWork';
+import Services from './components/Services';
+import Stats from './components/Stats';
 import Skills from './components/Skills';
 import Pricing from './components/Pricing';
 import Reviews from './components/Reviews';
@@ -22,9 +24,11 @@ export default function App() {
       <LoadingScreen />
       
       <Navbar />
-      <main className="relative bg-black text-white selection:bg-cyan-500/30 font-sans">
+      <main className="relative bg-black text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden w-full">
         <Hero />
         <MyWork />
+        <Stats />
+        <Services />
         <div id="skills"><Skills /></div>
         <div id="pricing"><Pricing /></div>
         <Reviews />

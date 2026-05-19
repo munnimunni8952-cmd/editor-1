@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useState, useRef, useEffect } from 'react';
-import { Play } from 'lucide-react';
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const REELS = [
   "https://www.image2url.com/r2/default/videos/1778752892118-7553e6be-ecf2-4544-8948-0a0ada5e7a1c.mp4",
@@ -15,25 +15,96 @@ const EXTENDED_REELS = [...REELS, ...REELS, ...REELS, ...REELS];
 export default function MyWork() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const dragged = useRef(false);
+
+  const handleInteractionStart = () => {
+    setIsInteracting(true);
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+    }
+  };
+
+  const handleInteractionEnd = () => {
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+    }
+    interactionTimeoutRef.current = setTimeout(() => {
+      setIsInteracting(false);
+    }, 1500); // Resume auto-scroll after 1.5s of inactivity
+  };
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDragging.current = true;
+    dragged.current = false;
+    handleInteractionStart();
+    const container = containerRef.current;
+    if (!container) return;
+    startX.current = e.pageX - container.offsetLeft;
+    scrollLeft.current = container.scrollLeft;
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging.current) return;
+    
+    const container = containerRef.current;
+    if (!container) return;
+    
+    if (e.pointerType === 'mouse') {
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX.current);
+      if (Math.abs(walk) > 5) {
+        dragged.current = true;
+      }
+      e.preventDefault();
+      container.scrollLeft = scrollLeft.current - walk;
+    }
+  };
+
+  const handlePointerUpOrLeave = () => {
+    isDragging.current = false;
+    handleInteractionEnd();
+  };
+
+  // Keep a ref to tracking paused state to use within the animation frame loop
+  const isPaused = activeVideoIndex !== null || isInteracting;
+  const isPausedRef = useRef(isPaused);
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
 
   // Auto-scroll logic
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Pause auto-scroll if a video is actively playing
-    if (activeVideoIndex !== null) return;
-
     let animationId: number;
     let lastTime: number;
     let exactScrollLeft = container.scrollLeft;
     const isMobile = window.innerWidth < 768;
-    const scrollSpeed = isMobile ? 0.02 : 0.04; // Adjust speed (slower on mobile)
+    const scrollSpeed = isMobile ? 0.02 : 0.04;
+    let wasPaused = isPausedRef.current;
 
     const scroll = (time: number) => {
       if (!lastTime) lastTime = time;
       const deltaTime = time - lastTime;
       lastTime = time;
+
+      if (isPausedRef.current) {
+        wasPaused = true;
+        animationId = requestAnimationFrame(scroll);
+        return;
+      }
+
+      if (wasPaused) {
+        exactScrollLeft = container.scrollLeft;
+        wasPaused = false;
+      }
 
       exactScrollLeft += deltaTime * scrollSpeed;
       container.scrollLeft = exactScrollLeft;
@@ -52,6 +123,10 @@ export default function MyWork() {
         if (loopWidth > 0 && exactScrollLeft >= loopWidth) {
           exactScrollLeft -= loopWidth;
           container.scrollLeft = exactScrollLeft;
+        } else if (loopWidth > 0 && exactScrollLeft < 0) {
+          // If scrolled backwards past start
+          exactScrollLeft += loopWidth;
+          container.scrollLeft = exactScrollLeft;
         }
       }
 
@@ -60,24 +135,47 @@ export default function MyWork() {
 
     animationId = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationId);
-  }, [activeVideoIndex]);
+  }, []); // Run only once to prevent restarting the animation loop
 
   const toggleVideo = (index: number, element: HTMLElement | null) => {
+    const container = containerRef.current;
+    if (container && Math.abs(container.scrollLeft - scrollLeft.current) > 10) return;
+    if (dragged.current) return;
+    
     if (activeVideoIndex === index) {
       setActiveVideoIndex(null);
     } else {
       setActiveVideoIndex(index);
       
       // Center the clicked video element
-      if (element && containerRef.current) {
-        const container = containerRef.current;
-        const scrollLeft = element.offsetLeft - container.offsetWidth / 2 + element.offsetWidth / 2;
+      if (element && container) {
+        const targetScrollLeft = element.offsetLeft - container.offsetWidth / 2 + element.offsetWidth / 2;
         container.scrollTo({
-          left: scrollLeft,
+          left: targetScrollLeft,
           behavior: 'smooth'
         });
       }
     }
+  };
+
+  const scrollContainer = (direction: 'left' | 'right') => {
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+    
+    // Pause auto-scroll by interacting
+    handleInteractionStart();
+    
+    const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.7 : window.innerWidth * 0.4;
+    
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+    
+    // Resume auto-scroll naturally after some time
+    setTimeout(() => {
+      handleInteractionEnd();
+    }, 500);
   };
 
   return (
@@ -103,12 +201,44 @@ export default function MyWork() {
         </motion.div>
       </div>
 
-      <div className="relative w-full py-6 md:py-8 z-40">
+      <div className="relative w-full z-40">
+        {/* Navigation Arrows */}
+        <button
+          onClick={() => scrollContainer('left')}
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-cyan-400"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
+        </button>
+
+        <button
+          onClick={() => scrollContainer('right')}
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-cyan-400"
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
+        </button>
+
         {/* Scroll Container */}
         <div 
           ref={containerRef}
-          className="flex items-center gap-4 md:gap-10 px-[10vw] md:px-[20vw] overflow-x-auto hide-scrollbar whitespace-nowrap cursor-grab active:cursor-grabbing"
+          className={`flex items-center gap-4 md:gap-10 px-[10vw] md:px-[20vw] py-8 md:py-12 overflow-x-auto overflow-y-hidden hide-scrollbar whitespace-nowrap cursor-grab active:cursor-grabbing ${isInteracting || activeVideoIndex !== null ? 'snap-x snap-mandatory' : ''}`}
           style={{ WebkitOverflowScrolling: 'touch' }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUpOrLeave}
+          onPointerLeave={handlePointerUpOrLeave}
+          onWheel={() => {
+            // Trigger pause if native scrolling on trackpad or mouse wheel
+            handleInteractionStart();
+            handleInteractionEnd();
+          }}
+          onTouchStart={() => {
+            handleInteractionStart();
+          }}
+          onTouchEnd={() => {
+            handleInteractionEnd();
+          }}
         >
           {EXTENDED_REELS.map((reelSrc, index) => {
             const isActive = activeVideoIndex === index;
@@ -201,7 +331,7 @@ function ReelItem({
     <div
       ref={itemRef}
       onClick={() => onClick(itemRef.current)}
-      className={`group relative w-[240px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden shrink-0 cursor-pointer transition-transform duration-300 transform border
+      className={`snap-center group relative w-[240px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden shrink-0 cursor-pointer transition-transform duration-300 transform border
         ${isActive 
           ? 'scale-[1.05] md:scale-[1.1] shadow-2xl z-50 ring-2 ring-cyan-400 border-cyan-400 mx-2 md:mx-6' 
           : isAnyActive
@@ -215,7 +345,7 @@ function ReelItem({
         <video
           ref={videoRef}
           src={`${src}#t=0.001`}
-          className="w-full h-full object-cover rounded-2xl bg-neutral-900"
+          className="w-full h-full object-cover rounded-2xl bg-neutral-900 pointer-events-none"
           playsInline
           loop={false}
           onEnded={onEnd}
