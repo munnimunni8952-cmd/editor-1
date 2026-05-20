@@ -21,9 +21,9 @@ export default function Contact() {
       setIsSubmitting(false);
       setIsSuccess(true);
       
-      const message = `Hello! I want to hire you.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Project Details:* ${project}`;
+      const message = `Hello! I want to work with you.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Project Details:* ${project}`;
       // Replace with actual WhatsApp number
-      const phoneNumber = "8918048595"; 
+      const phoneNumber = "916377033649"; 
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
       
       setTimeout(() => setIsSuccess(false), 5000);

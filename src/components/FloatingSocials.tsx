@@ -15,7 +15,7 @@ export default function FloatingSocials() {
 
       {/* WhatsApp Help Bot */}
       <a 
-        href="https://wa.me/1234567890?text=Hi!%20I%20have%20a%20question..."
+        href="https://wa.me/916377033649"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"

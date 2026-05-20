@@ -79,3 +79,28 @@ html, body, #root {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.hero-bg-image {
+  background-image: 
+    linear-gradient(rgba(12,11,15,0.25), rgba(12,11,15,0.35)),
+    url('https://i.ibb.co/XZm6bskw/Whats-App-Image-2026-05-20-at-12-08-18-PM.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(12,11,15,0.15);
+  backdrop-filter: blur(0px);
+  opacity: 0.8;
+  filter: brightness(1.08) contrast(1.12) saturate(1.15);
+  image-rendering: auto;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .hero-bg-image {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+  }
+}

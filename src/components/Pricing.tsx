@@ -188,7 +188,7 @@ function PricingCard({ plan, index, handleOrder }: { plan: any; index: number; h
 export default function Pricing() {
   const handleOrder = (planName: string) => {
     const message = `Hello! I'm interested in the *${planName}* plan. Let's discuss details!`;
-    const phoneNumber = "1234567890"; // Replace with actual number
+    const phoneNumber = "916377033649"; 
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 

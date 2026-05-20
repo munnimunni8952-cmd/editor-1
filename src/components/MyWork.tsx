@@ -3,10 +3,14 @@ import { useState, useRef, useEffect } from 'react';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const REELS = [
-  "https://www.image2url.com/r2/default/videos/1778752892118-7553e6be-ecf2-4544-8948-0a0ada5e7a1c.mp4",
-  "https://www.image2url.com/r2/default/videos/1778752981503-3ebc9bcd-6aa5-4ea6-b4ca-e432b6ac7c65.mp4",
-  "https://www.image2url.com/r2/default/videos/1778753018117-b704d364-630c-4198-8e7f-ccd22c84ae2e.mp4",
-  "https://www.image2url.com/r2/default/videos/1778753285716-27f39fe6-49eb-48bc-adc0-5e2390eb6da7.mp4"
+  "https://www.image2url.com/r2/default/videos/1779261227126-b2a8e88e-eca3-4cd8-b67f-0a4643c3c0e0.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261289565-523dc815-995a-4b7e-bf08-8c56ed5f2f0c.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261328217-2f4c9570-b73a-4c63-a8a7-3ab5f28827ab.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261361073-01666982-d9a8-44c0-87c6-c18c1d910970.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261429805-e3be240b-1e1d-4be5-90ea-f9797cd3b666.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261464932-d74b0fc3-014c-4204-afd4-6dfd16bd05ff.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261508330-8d6eec14-4393-41f6-bcff-f9ba96d2cf3f.mp4",
+  "https://www.image2url.com/r2/default/videos/1779261556737-946bc1c5-4f92-4cb4-9524-723d0af3297f.mp4"
 ];
 
 // Duplicate enough times to ensure smooth endless scrolling

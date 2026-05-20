@@ -72,12 +72,11 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <div className="absolute inset-0 bg-[url('https://i.ibb.co/XxKqjQ9J/Gemini-Generated-Image-dluq34dluq34dluq.png')] bg-cover bg-center md:bg-top opacity-[0.55] mix-blend-screen" />
+          <div className="absolute inset-0 hero-bg-image" />
         </motion.div>
         
         {/* Dark Overlays for text visibility and smooth transition to next section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0b0f]/10 via-[#0c0b0f]/30 to-[#0c0b0f] pointer-events-none" />
 
         {/* Cinematic glow overlays - hidden on mobile for performance */}
         <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/30 blur-[80px] mix-blend-screen" />
@@ -92,7 +91,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium tracking-wide text-[#4DA3FF]"
         >
           <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
-          AVAILABLE FOR FREELANCE WORK
+          Work With Us
         </motion.div>
 
         <motion.h1 
@@ -115,32 +114,34 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-6"
+          className="flex flex-col items-center gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <div className="relative group/btn">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] rounded-full blur-md opacity-40 animate-pulse" />
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="relative group/btn">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] rounded-full blur-md opacity-40 animate-pulse" />
+              <a
+                href="#contact"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 block"
+              >
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Work With Us</span>
+                <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
+              </a>
+            </div>
+
             <a
-              href="#contact"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 block"
+              href="#work"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10"
             >
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Hire Me</span>
-              <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <Play className="w-4 h-4" />
+              </div>
+              View Showreel
             </a>
           </div>
-
-          <a
-            href="#work"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10"
-          >
-            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-              <Play className="w-4 h-4" />
-            </div>
-            View Showreel
-          </a>
         </motion.div>
       </div>
     </section>

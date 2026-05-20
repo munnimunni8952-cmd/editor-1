@@ -21,7 +21,7 @@ const SOCIAL_LINKS = [
   {
     name: "YouTube",
     icon: Youtube,
-    link: "ADD_MY_YOUTUBE_LINK",
+    link: "https://youtube.com/@ankitsharma-e3g8u?si=RzLTYKMDGst_NzOv",
     gradient: "from-red-600 to-red-400",
     glowColor: "rgba(239, 68, 68, 0.6)",
     shadowClass: "hover:shadow-[0_0_40px_rgba(239,68,68,0.5)]"
@@ -45,7 +45,7 @@ export default function SocialLinks() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight mb-4">
             Follow Me On <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Social Media</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light">
+          <p className="text-gray-400 text-lg font-light mb-8">
             Stay updated with my latest cinematic edits, behind-the-scenes content, and premium tutorials.
           </p>
         </motion.div>

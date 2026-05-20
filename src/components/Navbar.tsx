@@ -87,12 +87,14 @@ export default function Navbar() {
           <a href="#socials" className="hover:text-[#4DA3FF] transition-colors">Socials</a>
         </div>
 
-        <a 
-          href="#contact"
-          className="hidden md:block text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#4DA3FF] transition-all duration-300 text-white"
-        >
-          Contact
-        </a>
+        <div className="hidden md:flex items-center gap-4">
+          <a 
+            href="#contact"
+            className="text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#4DA3FF] transition-all duration-300 text-white"
+          >
+            Contact
+          </a>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button 
@@ -155,7 +157,15 @@ export default function Navbar() {
               </div>
 
               {/* Footer CTA */}
-              <div className="p-6 mt-auto border-t" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+              <div className="p-6 mt-auto border-t flex flex-col gap-3" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                <a
+                  href="https://wa.me/916377033649"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/20 transition-all duration-300 text-white"
+                >
+                  Call Now — 6377033649
+                </a>
                 <a 
                   href="#contact"
                   onClick={toggleMenu}
