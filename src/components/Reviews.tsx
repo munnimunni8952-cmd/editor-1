@@ -24,7 +24,7 @@ export default function Reviews() {
           className="text-center"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4">
-            Client <span className="text-cyan-400">Reviews</span>
+            Client <span className="text-[#4DA3FF]">Reviews</span>
           </h2>
           <p className="text-gray-400 text-lg font-light">Don't just take my word for it.</p>
         </motion.div>
@@ -38,19 +38,19 @@ export default function Reviews() {
               <motion.div
                 key={`${index}`}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="w-[300px] md:w-[400px] shrink-0 glass-card p-8 rounded-3xl relative transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(0,243,255,0.2)] hover:border-cyan-400/30 overflow-hidden"
+                className="w-[300px] md:w-[400px] shrink-0 glass-card p-8 rounded-3xl relative transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(77,163,255,0.2)] hover:border-[#4DA3FF]/30 overflow-hidden"
               >
                 {/* Glow Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-transparent to-purple-500/0 opacity-0 hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#4DA3FF]/0 via-transparent to-purple-500/0 opacity-0 hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
 
                 <div className="flex items-center gap-4 mb-6 relative z-10">
                   <div className="relative">
-                    <div className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-30 group-hover:opacity-60 transition-opacity" />
-                    <img src={review.image} alt={review.name} loading="lazy" className="w-14 h-14 rounded-full object-cover border border-cyan-400/20 relative z-10" />
+                    <div className="absolute inset-0 bg-[#4DA3FF] rounded-full blur-md opacity-30 group-hover:opacity-60 transition-opacity" />
+                    <img src={review.image} alt={review.name} loading="lazy" className="w-14 h-14 rounded-full object-cover border border-[#4DA3FF]/20 relative z-10" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-white">{review.name}</h4>
-                    <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">{review.role}</p>
+                    <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF]">{review.role}</p>
                   </div>
                 </div>
                 
@@ -63,12 +63,12 @@ export default function Reviews() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: i * 0.1 }}
                     >
-                      <Star className="w-4 h-4 fill-cyan-400 text-cyan-400" />
+                      <Star className="w-4 h-4 fill-white text-white" />
                     </motion.div>
                   ))}
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed italic relative z-10">"{review.text}"</p>
+                <p className="text-white leading-relaxed italic relative z-10">"{review.text}"</p>
                 
                 {/* Quote decoration */}
                 <div className="absolute -top-4 -right-4 text-9xl font-display text-white/[0.02] select-none pointer-events-none">"</div>

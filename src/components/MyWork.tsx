@@ -193,7 +193,7 @@ export default function MyWork() {
            transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
-            My work <span className="text-cyan-400">Reels</span>
+            My work <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Reels</span>
           </h2>
           <p className="text-gray-400 max-w-2xl text-lg font-light">
             A collection of my best video projects, showcasing dynamic editing, color grading, and visual storytelling.
@@ -205,7 +205,7 @@ export default function MyWork() {
         {/* Navigation Arrows */}
         <button
           onClick={() => scrollContainer('left')}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-cyan-400"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-[#4DA3FF]"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
@@ -213,7 +213,7 @@ export default function MyWork() {
 
         <button
           onClick={() => scrollContainer('right')}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-cyan-400"
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/20 hover:bg-black/40 border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all text-white group outline-none focus:ring-2 focus:ring-[#4DA3FF]"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />

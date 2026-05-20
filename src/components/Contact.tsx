@@ -92,22 +92,22 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
-                    <input required name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors" placeholder="John Doe" />
+                    <input required name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="John Doe" />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Phone Number</label>
-                    <input required name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors" placeholder="+123456789" />
+                    <input required name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="+123456789" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
-                  <input required name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors" placeholder="john@example.com" />
+                  <input required name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="john@example.com" />
                 </div>
 
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Project Details</label>
-                  <textarea required name="project" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 transition-colors resize-none" placeholder="Tell me about your vision..."></textarea>
+                  <textarea required name="project" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors resize-none" placeholder="Tell me about your vision..."></textarea>
                 </div>
 
                 <button 

@@ -14,13 +14,13 @@ const PLANS = [
       "Trending effects",
       "Fast delivery"
     ],
-    bgGradient: "from-cyan-500/5 to-blue-500/5",
-    borderClass: "border-cyan-500/20 group-hover:border-cyan-400/50",
-    shadowClass: "hover:shadow-[0_0_40px_rgba(34,211,238,0.3)]",
-    btnGradient: "from-cyan-500 to-blue-600",
+    bgGradient: "from-[#4DA3FF]/5 to-[#6EE7FF]/5",
+    borderClass: "border-[#4DA3FF]/20 group-hover:border-[#4DA3FF]/50",
+    shadowClass: "hover:shadow-[0_0_40px_rgba(77,163,255,0.3)]",
+    btnGradient: "from-[#4DA3FF] to-[#6EE7FF]",
     btnText: "Order Now",
-    accentText: "text-cyan-400",
-    glowColor: "rgba(34, 211, 238, 0.15)"
+    accentText: "text-[#4DA3FF]",
+    glowColor: "rgba(77, 163, 255, 0.15)"
   },
   {
     id: "5-reels",
@@ -233,7 +233,7 @@ export default function Pricing() {
             const BadgeIcon = badge.icon;
             return (
               <div key={index} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-cyan-400 border border-cyan-400/20">
+                <div className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#4DA3FF] border border-[#4DA3FF]/20">
                   <BadgeIcon className="w-5 h-5" />
                 </div>
                 <span className="text-gray-300 font-medium text-sm md:text-base">{badge.text}</span>

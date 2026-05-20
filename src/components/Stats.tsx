@@ -5,11 +5,11 @@ import { Video, Eye, Users, Clock } from 'lucide-react';
 const statsData = [
   { 
     label: "Projects", 
-    value: 100, 
+    value: 2000, 
     suffix: "+", 
     icon: Video, 
-    color: "from-cyan-400 to-blue-500",
-    shadow: "group-hover:shadow-cyan-500/20"
+    color: "from-[#4DA3FF] to-[#6EE7FF]",
+    shadow: "group-hover:shadow-[#4DA3FF]/20"
   },
   { 
     label: "Reel Views", 

@@ -43,7 +43,7 @@ export default function SocialLinks() {
           className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight mb-4">
-            Follow Me On <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400">Social Media</span>
+            Follow Me On <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Social Media</span>
           </h2>
           <p className="text-gray-400 text-lg font-light">
             Stay updated with my latest cinematic edits, behind-the-scenes content, and premium tutorials.

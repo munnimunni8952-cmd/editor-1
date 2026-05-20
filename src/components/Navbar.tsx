@@ -1,6 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+
+const menuItemVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: custom * 0.05 + 0.1, duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+  }),
+  exit: { opacity: 0, x: 20, transition: { duration: 0.2 } }
+};
+
+const MobileMenuLink = ({ href, onClick, children, index }: { href: string; onClick: () => void; children: React.ReactNode; index: number }) => (
+  <motion.a
+    href={href}
+    onClick={onClick}
+    custom={index}
+    variants={menuItemVariants}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    className="group relative flex items-center px-5 py-4 rounded-2xl text-xl font-display font-medium text-[#A1A1AA] transition-all duration-300 hover:text-[#FFFFFF] hover:bg-white/[0.04] hover:translate-x-1"
+  >
+    <div className="absolute inset-0 bg-[#A78BFA]/0 group-hover:bg-[#A78BFA]/10 blur-xl transition-all duration-300 rounded-2xl -z-10 pointer-events-none" />
+    {children}
+  </motion.a>
+);
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -16,6 +42,17 @@ export default function Navbar() {
   });
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -34,23 +71,25 @@ export default function Navbar() {
             alt="Brand Logo" 
             className="h-10 w-auto object-contain animate-float-logo logo-glow"
           />
-          <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-pink-500 transition-all duration-300">
+          <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#4DA3FF] group-hover:to-[#6EE7FF] transition-all duration-300">
             Studio
           </span>
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-sm font-medium text-gray-300">
-          <a href="#work" className="hover:text-cyan-400 transition-colors">Work</a>
-          <a href="#services" className="hover:text-white transition-colors">Services</a>
-          <a href="#skills" className="hover:text-purple-400 transition-colors">Skills</a>
-          <a href="#pricing" className="hover:text-pink-400 transition-colors">Pricing</a>
-          <a href="#socials" className="hover:text-cyan-400 transition-colors">Socials</a>
+          <a href="#work" className="hover:text-[#4DA3FF] transition-colors">Work</a>
+          <a href="#long-form" className="hover:text-[#4DA3FF] transition-colors">Long Form</a>
+          <a href="#services" className="hover:text-[#4DA3FF] transition-colors">Services</a>
+          <a href="#team" className="hover:text-[#4DA3FF] transition-colors">Team</a>
+          <a href="#skills" className="hover:text-[#4DA3FF] transition-colors">Skills</a>
+          <a href="#pricing" className="hover:text-[#4DA3FF] transition-colors">Pricing</a>
+          <a href="#socials" className="hover:text-[#4DA3FF] transition-colors">Socials</a>
         </div>
 
         <a 
           href="#contact"
-          className="hidden md:block text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-cyan-400 transition-all duration-300 text-white"
+          className="hidden md:block text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#4DA3FF] transition-all duration-300 text-white"
         >
           Contact
         </a>
@@ -67,26 +106,67 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
-          >
-            <a href="#work" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-cyan-400 transition-colors">Work</a>
-            <a href="#services" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-white transition-colors">Services</a>
-            <a href="#skills" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-            <a href="#pricing" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-pink-400 transition-colors">Pricing</a>
-            <a href="#socials" onClick={toggleMenu} className="text-2xl font-display font-bold text-gray-300 hover:text-cyan-400 transition-colors">Socials</a>
-            <a 
-              href="#contact"
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[60]"
+              style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)' }}
               onClick={toggleMenu}
-              className="mt-4 text-lg font-bold uppercase tracking-wider px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-cyan-400 transition-all duration-300 text-white"
+            />
+
+            {/* Sidebar drawer */}
+            <motion.div
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed top-0 right-0 bottom-0 w-[300px] max-w-[85vw] flex flex-col rounded-l-[2rem] shadow-[-20px_0_40px_rgba(0,0,0,0.5)] border-l z-[70] overflow-hidden"
+              style={{ 
+                background: 'rgba(12,11,15,0.92)', 
+                backdropFilter: 'blur(20px)',
+                borderColor: 'rgba(255,255,255,0.08)'
+              }}
             >
-              Contact
-            </a>
-          </motion.div>
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                <span className="font-display font-medium text-xs tracking-widest text-[#A1A1AA] uppercase">Menu</span>
+                <button 
+                  onClick={toggleMenu}
+                  className="text-[#A1A1AA] hover:text-white p-2 rounded-full hover:bg-white/[0.04] transition-colors focus:outline-none"
+                  aria-label="Close Menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex flex-col gap-1 p-4 overflow-y-auto">
+                <MobileMenuLink href="#work" onClick={toggleMenu} index={1}>Work</MobileMenuLink>
+                <MobileMenuLink href="#long-form" onClick={toggleMenu} index={2}>Long Form</MobileMenuLink>
+                <MobileMenuLink href="#services" onClick={toggleMenu} index={3}>Services</MobileMenuLink>
+                <MobileMenuLink href="#team" onClick={toggleMenu} index={4}>Team</MobileMenuLink>
+                <MobileMenuLink href="#skills" onClick={toggleMenu} index={5}>Skills</MobileMenuLink>
+                <MobileMenuLink href="#pricing" onClick={toggleMenu} index={6}>Pricing</MobileMenuLink>
+                <MobileMenuLink href="#socials" onClick={toggleMenu} index={7}>Socials</MobileMenuLink>
+              </div>
+
+              {/* Footer CTA */}
+              <div className="p-6 mt-auto border-t" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                <a 
+                  href="#contact"
+                  onClick={toggleMenu}
+                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-white/[0.04] hover:bg-white/10 border transition-all duration-300 text-white"
+                  style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+                >
+                  Contact Us
+                </a>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

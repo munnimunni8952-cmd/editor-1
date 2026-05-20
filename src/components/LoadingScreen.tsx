@@ -39,7 +39,7 @@ export default function LoadingScreen() {
             {/* Cinematic Loader */}
             <div className="w-48 h-[2px] bg-white/10 relative overflow-hidden mb-6">
               <motion.div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-cyan-400 to-pink-500"
+                className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF]"
                 initial={{ width: 0, x: 0 }}
                 animate={{ 
                   width: ["0%", "50%", "100%"],

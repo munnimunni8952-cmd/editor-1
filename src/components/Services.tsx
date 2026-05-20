@@ -197,12 +197,12 @@ export default function Services() {
           className="text-center max-w-2xl mx-auto mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
             <span className="text-sm font-medium tracking-wide text-neutral-300 uppercase">Our Expertise</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">Services</span>
+            Premium <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-lg text-neutral-400 leading-relaxed">
             Elevate your brand with cinematic visuals, seamless storytelling, and high-converting video content tailored for the modern digital landscape.

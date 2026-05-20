@@ -44,13 +44,13 @@ function TypewriterEffect() {
 
   return (
     <span className="inline-flex items-center justify-center h-[1.2em] min-w-[300px] md:min-w-[600px]">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+      <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(77,163,255,0.4)]">
         {WORDS[index].substring(0, subIndex)}
       </span>
       <span 
-        className={`inline-block w-[4px] h-[0.9em] md:w-[6px] ml-1 md:ml-2 md:h-[0.8em] bg-pink-500 rounded-full transition-opacity duration-100 ${
+        className={`inline-block w-[4px] h-[0.9em] md:w-[6px] ml-1 md:ml-2 md:h-[0.8em] bg-[#4DA3FF] rounded-full transition-opacity duration-100 ${
           blink ? 'opacity-100' : 'opacity-0'
-        } drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]`} 
+        } drop-shadow-[0_0_10px_rgba(77,163,255,0.8)]`} 
       />
     </span>
   );
@@ -89,9 +89,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium tracking-wide text-cyan-400"
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium tracking-wide text-[#4DA3FF]"
         >
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
           AVAILABLE FOR FREELANCE WORK
         </motion.div>
 
@@ -121,12 +121,12 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
         >
           <div className="relative group/btn">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-full blur-md opacity-40 animate-pulse" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] rounded-full blur-md opacity-40 animate-pulse" />
             <a
               href="#contact"
               className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 block"
             >
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">Hire Me</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
             </a>
