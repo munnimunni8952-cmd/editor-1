@@ -18,38 +18,36 @@ export default function MapSection() {
           loading="lazy"
           allowFullScreen
           // Using a generic New York location for demo purposes
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2528001099!2d-74.14483163152528!3d40.69763123326162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+          src="https://maps.google.com/maps?q=26.976500,75.726861&z=15&output=embed"
         ></iframe>
       </div>
 
       {/* Overlay to reduce map brightness and add vignette */}
       <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0f] via-transparent to-[#0c0b0f] pointer-events-none" />
       
       {/* Animated Pin Overlay (Centralized for visual effect, not tied to logic) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <motion.div
-           initial={{ y: -50, opacity: 0 }}
-           whileInView={{ y: 0, opacity: 1 }}
-           viewport={{ once: true }}
-           transition={{ type: "spring", bounce: 0.6, duration: 1 }}
-           className="relative"
-        >
-          <div className="w-16 h-16 bg-[#4DA3FF]/20 rounded-full absolute -inset-2 scale-110 opacity-70" />
-          <div className="w-12 h-12 bg-[#4DA3FF] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(77,163,255,0.6)] relative z-10">
-            <MapPin className="w-6 h-6 text-black" />
-          </div>
-        </motion.div>
+        {/* We can remove this fake absolute pin, because we are supplying a precise coordinate embed that typically has its own pin, or we can keep it as a stylized overlay */}
       </div>
 
-      <div className="absolute bottom-12 left-6 md:left-12 max-w-sm glass-card p-6 rounded-2xl pointer-events-auto">
-        <h3 className="text-xl font-bold mb-2">Studio Location</h3>
-        <p className="text-gray-400 text-sm mb-4">
-          Based in the creative heart of the city. Available for worldwide remote projects.
+      <div className="absolute bottom-12 left-6 md:left-12 max-w-[320px] glass-card p-6 rounded-2xl pointer-events-auto border border-white/5 backdrop-blur-lg shadow-2xl">
+        <h3 className="text-xl font-display font-bold mb-2 tracking-wide">Studio Location</h3>
+        <p className="text-gray-400 text-sm mb-5 leading-relaxed">
+          Available for worldwide remote projects.
         </p>
-        <div className="text-[#4DA3FF] text-sm font-semibold flex items-center gap-2">
-          <MapPin className="w-4 h-4" /> Los Angeles, CA
+        <div className="text-white text-sm font-medium flex items-center gap-2 mb-6">
+          <MapPin className="w-4 h-4 text-[#4DA3FF]" /> 
+          <span className="font-mono text-xs opacity-80">26°58'35.4"N 75°43'36.7"E</span>
         </div>
+        <a 
+          href="https://www.google.com/maps?q=26.976500,75.726861"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center w-full py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-[#4DA3FF] hover:text-black hover:shadow-[0_0_20px_rgba(77,163,255,0.4)] transition-all duration-300"
+        >
+          Open Location
+        </a>
       </div>
     </section>
   );

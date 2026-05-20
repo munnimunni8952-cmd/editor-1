@@ -51,7 +51,8 @@ export default function App() {
                 className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
               />
             </a>
-            <p className="text-gray-500 text-sm font-light">© {new Date().getFullYear()} Your Agency — Contact: 6377033649</p>
+            <p className="text-gray-500 text-sm font-light">© {new Date().getFullYear()} Trimclipedits</p>
+            <p className="text-gray-600 text-xs mt-2 uppercase tracking-widest font-medium">Website made by Raj Developer</p>
           </div>
         </footer>
       </main>

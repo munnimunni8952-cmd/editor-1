@@ -82,25 +82,26 @@ html, body, #root {
 
 .hero-bg-image {
   background-image: 
-    linear-gradient(rgba(12,11,15,0.25), rgba(12,11,15,0.35)),
+    linear-gradient(rgba(12,11,15,0.30), rgba(12,11,15,0.40)),
     url('https://i.ibb.co/XZm6bskw/Whats-App-Image-2026-05-20-at-12-08-18-PM.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: rgba(12,11,15,0.15);
-  backdrop-filter: blur(0px);
-  opacity: 0.8;
-  filter: brightness(1.08) contrast(1.12) saturate(1.15);
+  background-color: rgba(12,11,15,0.18);
+  background-blend-mode: soft-light;
   image-rendering: auto;
-  transform: scale(1.05);
-  will-change: transform;
+  filter: contrast(1.08) brightness(1.05) saturate(1.08);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @media (max-width: 768px) {
   .hero-bg-image {
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-attachment: scroll;
   }
 }

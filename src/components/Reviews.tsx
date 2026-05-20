@@ -1,5 +1,8 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useCallback, useEffect, useState } from 'react';
 
 const REVIEWS = [
   { id: 1, name: "Sarah Jenkins", role: "Content Creator", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop", text: "Incredible eye for detail. The edits brought my vlog to life in a way I didn't think was possible!" },
@@ -10,6 +13,30 @@ const REVIEWS = [
 ];
 
 export default function Reviews() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: 'start', skipSnaps: false },
+    [Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
+
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setPrevBtnEnabled(emblaApi.canScrollPrev());
+    setNextBtnEnabled(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background glow */}
@@ -21,24 +48,42 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-8 text-center md:text-left"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4">
-            Client <span className="text-[#4DA3FF]">Reviews</span>
-          </h2>
-          <p className="text-gray-400 text-lg font-light">Don't just take my word for it.</p>
+          <div>
+            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4">
+              Client <span className="text-[#4DA3FF]">Reviews</span>
+            </h2>
+            <p className="text-gray-400 text-lg font-light">Don't just take my word for it.</p>
+          </div>
+          
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={scrollPrev}
+              className="p-3 rounded-full border border-white/10 hover:border-[#4DA3FF]/50 hover:bg-[#4DA3FF]/10 transition-all text-white/70 hover:text-white"
+              aria-label="Previous review"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="p-3 rounded-full border border-white/10 hover:border-[#4DA3FF]/50 hover:bg-[#4DA3FF]/10 transition-all text-white/70 hover:text-white"
+              aria-label="Next review"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </motion.div>
       </div>
 
-      <div className="relative w-full overflow-hidden">
-        {/* Infinite Scroll Container (Right to Left) */}
-        <div className="flex w-max group">
-          <div className="flex animate-marquee gap-6 px-3 group-hover:[animation-play-state:paused]" style={{ animationDuration: '35s' }}>
-            {[...REVIEWS, ...REVIEWS].map((review, index) => (
+      <div className="relative w-full max-w-[100vw] overflow-hidden px-6 md:px-12 group">
+        <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
+          <div className="flex gap-6 pt-4 pb-12">
+            {REVIEWS.map((review, index) => (
               <motion.div
-                key={`${index}`}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="w-[300px] md:w-[400px] shrink-0 glass-card p-8 rounded-3xl relative transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(77,163,255,0.2)] hover:border-[#4DA3FF]/30 overflow-hidden"
+                key={review.id}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="flex-[0_0_85%] sm:flex-[0_0_300px] md:flex-[0_0_400px] min-w-0 glass-card p-8 rounded-3xl relative transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(77,163,255,0.2)] hover:border-[#4DA3FF]/30 overflow-hidden"
               >
                 {/* Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#4DA3FF]/0 via-transparent to-purple-500/0 opacity-0 hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
@@ -78,8 +123,8 @@ export default function Reviews() {
         </div>
 
         {/* Edge Gradients */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-8 md:w-24 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-8 md:w-24 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );

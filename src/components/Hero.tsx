@@ -139,7 +139,7 @@ export default function Hero() {
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
                 <Play className="w-4 h-4" />
               </div>
-              View Showreel
+              Explore Portfolio
             </a>
           </div>
         </motion.div>

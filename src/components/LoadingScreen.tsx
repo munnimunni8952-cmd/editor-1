@@ -67,10 +67,7 @@ export default function LoadingScreen() {
                   style={{
                     textShadow: "0 0 30px rgba(255,255,255,0.3)"
                   }}>
-                CREATING CINEMATIC
-                <br className="block md:hidden" />
-                <span className="hidden md:inline"> </span>
-                EXPERIENCES
+                Trimclipedits
               </h1>
               {/* Luxury Shine Sweep */}
               <motion.div

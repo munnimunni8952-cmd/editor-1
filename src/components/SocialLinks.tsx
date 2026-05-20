@@ -5,7 +5,7 @@ const SOCIAL_LINKS = [
   {
     name: "Instagram",
     icon: Instagram,
-    link: "https://www.instagram.com/trimclipedits?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    link: "https://www.instagram.com/trimclipedits?igsh=cmU0N3dudnBjamRv",
     gradient: "from-purple-500 via-pink-500 to-orange-500",
     glowColor: "rgba(236, 72, 153, 0.6)",
     shadowClass: "hover:shadow-[0_0_40px_rgba(236,72,153,0.5)]"
