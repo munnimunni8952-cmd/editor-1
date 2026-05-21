@@ -49,7 +49,7 @@ export default function PhotoSlider() {
   );
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#050816]">
+    <section id="studio" className="py-24 relative overflow-hidden bg-[#050816]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -62,7 +62,7 @@ export default function PhotoSlider() {
            className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white">
-            Inside the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Studio</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Studio</span>
           </h2>
           <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
             A glimpse into our creative environment and the process behind the magic.

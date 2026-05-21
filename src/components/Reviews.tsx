@@ -96,8 +96,23 @@ export default function Reviews() {
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return;
+    const autoScroll = emblaApi.plugins().autoScroll;
+    if (autoScroll && autoScroll.isPlaying()) {
+      autoScroll.reset();
+    }
+    emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return;
+    const autoScroll = emblaApi.plugins().autoScroll;
+    if (autoScroll && autoScroll.isPlaying()) {
+      autoScroll.reset();
+    }
+    emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -132,17 +147,17 @@ export default function Reviews() {
             <p className="text-gray-400 text-lg font-light">Don't just take our word for it.</p>
           </div>
           
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 relative z-50">
             <button
               onClick={scrollPrev}
-              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white"
+              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
               aria-label="Previous review"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white"
+              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
               aria-label="Next review"
             >
               <ChevronRight className="w-6 h-6" />

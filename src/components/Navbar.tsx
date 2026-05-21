@@ -77,14 +77,14 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex flex-1 items-center justify-center gap-8 text-sm font-medium text-gray-300">
-          <a href="#work" className="hover:text-[#4DA3FF] transition-colors">Work</a>
-          <a href="#long-form" className="hover:text-[#4DA3FF] transition-colors">Long Form</a>
-          <a href="#services" className="hover:text-[#4DA3FF] transition-colors">Services</a>
-          <a href="#team" className="hover:text-[#4DA3FF] transition-colors">Team</a>
-          <a href="#skills" className="hover:text-[#4DA3FF] transition-colors">Skills</a>
-          <a href="#pricing" className="hover:text-[#4DA3FF] transition-colors">Pricing</a>
-          <a href="#socials" className="hover:text-[#4DA3FF] transition-colors">Socials</a>
+        <div className="hidden md:flex flex-1 flex-wrap items-center justify-center gap-6 text-sm font-medium text-gray-300">
+          <a href="#long-form" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Long Form</a>
+          <a href="#services" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Services</a>
+          <a href="#reviews" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Reviews</a>
+          <a href="#studio" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Studio</a>
+          <a href="#team" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Team</a>
+          <a href="#skills" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Skills</a>
+          <a href="#pricing" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Pricing</a>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -147,25 +147,17 @@ export default function Navbar() {
 
               {/* Navigation Links */}
               <div className="flex flex-col gap-1 p-4 overflow-y-auto">
-                <MobileMenuLink href="#work" onClick={toggleMenu} index={1}>Work</MobileMenuLink>
-                <MobileMenuLink href="#long-form" onClick={toggleMenu} index={2}>Long Form</MobileMenuLink>
-                <MobileMenuLink href="#services" onClick={toggleMenu} index={3}>Services</MobileMenuLink>
-                <MobileMenuLink href="#team" onClick={toggleMenu} index={4}>Team</MobileMenuLink>
-                <MobileMenuLink href="#skills" onClick={toggleMenu} index={5}>Skills</MobileMenuLink>
-                <MobileMenuLink href="#pricing" onClick={toggleMenu} index={6}>Pricing</MobileMenuLink>
-                <MobileMenuLink href="#socials" onClick={toggleMenu} index={7}>Socials</MobileMenuLink>
+                <MobileMenuLink href="#long-form" onClick={toggleMenu} index={1}>Long Form</MobileMenuLink>
+                <MobileMenuLink href="#services" onClick={toggleMenu} index={2}>Services</MobileMenuLink>
+                <MobileMenuLink href="#reviews" onClick={toggleMenu} index={3}>Reviews</MobileMenuLink>
+                <MobileMenuLink href="#studio" onClick={toggleMenu} index={4}>Studio</MobileMenuLink>
+                <MobileMenuLink href="#team" onClick={toggleMenu} index={5}>Team</MobileMenuLink>
+                <MobileMenuLink href="#skills" onClick={toggleMenu} index={6}>Skills</MobileMenuLink>
+                <MobileMenuLink href="#pricing" onClick={toggleMenu} index={7}>Pricing</MobileMenuLink>
               </div>
 
               {/* Footer CTA */}
               <div className="p-6 mt-auto border-t flex flex-col gap-3" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
-                <a
-                  href="https://wa.me/916377033649"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/20 transition-all duration-300 text-white"
-                >
-                  Call Now — 6377033649
-                </a>
                 <a 
                   href="tel:+916377033649"
                   onClick={toggleMenu}

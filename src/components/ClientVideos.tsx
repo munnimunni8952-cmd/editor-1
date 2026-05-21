@@ -69,7 +69,7 @@ export default function ClientVideos() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 md:py-24 relative overflow-hidden bg-[#050816]">
+    <section id="reviews" className="py-20 md:py-24 relative overflow-hidden bg-[#050816]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
@@ -105,9 +105,8 @@ export default function ClientVideos() {
           />
 
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white drop-shadow-lg relative z-10">
-            Client Review{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Videos
+              Reviews
             </span>
             <motion.div
               initial={{ width: 0 }}

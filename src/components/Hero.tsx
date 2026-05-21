@@ -134,6 +134,16 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
               </button>
             </div>
+
+            <a
+              href="#work"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10"
+            >
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                <Play className="w-4 h-4" />
+              </div>
+              Explore Portfolio
+            </a>
           </div>
         </motion.div>
       </div>

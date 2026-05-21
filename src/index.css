@@ -72,6 +72,12 @@ html, body, #root {
   animation: float-logo 4s ease-in-out infinite;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 .logo-glow {
   filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
   transition: filter 0.3s ease;
