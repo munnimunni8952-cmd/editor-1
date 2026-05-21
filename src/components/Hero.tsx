@@ -67,7 +67,16 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
           style={{ y, scale }}
-          className="absolute inset-[-10%] w-[120%] h-[120%]"
+          className="absolute inset-[-10%] w-[120%] h-[120%] hidden md:block"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute inset-0 hero-bg-image" />
+        </motion.div>
+
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-[100vh] md:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -84,15 +93,6 @@ export default function Hero() {
       </div>
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium tracking-wide text-[#4DA3FF]"
-        >
-          <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
-          Work With Us
-        </motion.div>
 
         <motion.h1 
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[1.1] md:leading-[1.1] text-white flex flex-col items-center justify-center text-center w-full min-h-[160px] md:min-h-[220px] mb-6"
@@ -122,14 +122,17 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <div className="relative group/btn">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] rounded-full blur-md opacity-40 animate-pulse" />
-              <a
-                href="#contact"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 block"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent('open-work-modal'));
+                }}
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full"
               >
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">Work With Us</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
-              </a>
+              </button>
             </div>
 
             <a

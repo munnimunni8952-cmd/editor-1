@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 
 const SKILLS = [
@@ -52,7 +52,7 @@ const SKILLS = [
   },
 ];
 
-function SkillCard({ skill, index }: { skill: any; index: number }) {
+const SkillCard: React.FC<{ skill: any; index: number }> = ({ skill, index }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   return (

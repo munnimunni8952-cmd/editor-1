@@ -15,7 +15,7 @@ const videoIds = [
   "ZjFgeB24MWw"
 ];
 
-const VideoCard = ({ videoId, index }: { videoId: string; index: number }) => {
+const VideoCard: React.FC<{ videoId: string; index: number }> = ({ videoId, index }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 

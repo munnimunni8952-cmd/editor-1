@@ -11,19 +11,23 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import Team from './components/Team';
 import Skills from './components/Skills';
+import PhotoSlider from './components/PhotoSlider';
 import Pricing from './components/Pricing';
 import Reviews from './components/Reviews';
+import ClientVideos from './components/ClientVideos';
 import Contact from './components/Contact';
 import SocialLinks from './components/SocialLinks';
 import MapSection from './components/MapSection';
 import FloatingSocials from './components/FloatingSocials';
 import LoadingScreen from './components/LoadingScreen';
+import WorkModal from './components/WorkModal';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 export default function App() {
   return (
     <>
       <LoadingScreen />
+      <WorkModal />
       
       <Navbar />
       <main className="relative bg-black text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden w-full">
@@ -35,7 +39,9 @@ export default function App() {
         <Team />
         <div id="skills"><Skills /></div>
         <div id="pricing"><Pricing /></div>
+        <PhotoSlider />
         <Reviews />
+        <ClientVideos />
         <Contact />
         <SocialLinks />
         <MapSection />

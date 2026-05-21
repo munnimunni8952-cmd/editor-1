@@ -29,6 +29,15 @@ html, body, #root {
   will-change: transform;
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
 .glass-card {
   background: rgba(20, 20, 20, 0.4);
   backdrop-filter: blur(20px);
@@ -89,7 +98,7 @@ html, body, #root {
   background-repeat: no-repeat;
   background-color: rgba(12,11,15,0.18);
   background-blend-mode: soft-light;
-  image-rendering: auto;
+  image-rendering: high-quality;
   filter: contrast(1.08) brightness(1.05) saturate(1.08);
   min-height: 100vh;
   width: 100%;
@@ -101,7 +110,11 @@ html, body, #root {
 @media (max-width: 768px) {
   .hero-bg-image {
     background-size: cover;
-    background-position: center;
+    background-position: center 15%;
     background-attachment: scroll;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: none;
+    -webkit-backface-visibility: visible;
   }
 }

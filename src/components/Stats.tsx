@@ -12,7 +12,7 @@ const statsData = [
     shadow: "group-hover:shadow-[#4DA3FF]/20"
   },
   { 
-    label: "Reel Views", 
+    label: "VIEWS", 
     value: 20, 
     suffix: "M+", 
     icon: Eye, 
@@ -70,7 +70,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
   return (
     <div ref={ref} className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-2 flex items-baseline justify-center">
       <span>{count}</span>
-      <span className="text-3xl md:text-4xl">{suffix}</span>
+      <span className="text-3xl md:text-4xl" style={{ height: '43px' }}>{suffix}</span>
     </div>
   );
 };

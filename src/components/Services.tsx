@@ -86,7 +86,7 @@ const GlowingOrbs = () => (
   </div>
 );
 
-const TiltCard = ({ service, index }: { service: typeof services[0], index: number }) => {
+const TiltCard: React.FC<{ service: typeof services[0], index: number }> = ({ service, index }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);

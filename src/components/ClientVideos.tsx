@@ -4,28 +4,21 @@ import { VolumeX, Volume2, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
-const REELS = [
+const REVIEW_VIDEOS = [
   "https://www.image2url.com/r2/default/videos/1779261227126-b2a8e88e-eca3-4cd8-b67f-0a4643c3c0e0.mp4",
   "https://www.image2url.com/r2/default/videos/1779261289565-523dc815-995a-4b7e-bf08-8c56ed5f2f0c.mp4",
   "https://www.image2url.com/r2/default/videos/1779261328217-2f4c9570-b73a-4c63-a8a7-3ab5f28827ab.mp4",
   "https://www.image2url.com/r2/default/videos/1779261361073-01666982-d9a8-44c0-87c6-c18c1d910970.mp4",
-  "https://www.image2url.com/r2/default/videos/1779261429805-e3be240b-1e1d-4be5-90ea-f9797cd3b666.mp4",
-  "https://www.image2url.com/r2/default/videos/1779261464932-d74b0fc3-014c-4204-afd4-6dfd16bd05ff.mp4",
-  "https://www.image2url.com/r2/default/videos/1779261508330-8d6eec14-4393-41f6-bcff-f9ba96d2cf3f.mp4",
-  "https://www.image2url.com/r2/default/videos/1779261556737-946bc1c5-4f92-4cb4-9524-723d0af3297f.mp4",
-  "https://www.image2url.com/r2/default/videos/1779346987862-911615f0-a4aa-433c-a657-93153687cc0e.mp4",
-  "https://www.image2url.com/r2/default/videos/1779347132865-3bfa92e5-b7c7-4dda-aee4-82859e8df348.mp4",
-  "https://www.image2url.com/r2/default/videos/1779347304810-9a6fddfc-cc77-42d9-850f-f5d5fc6f7d9b.mp4",
-  "https://www.image2url.com/r2/default/videos/1779347346016-c1fb2ca3-5d50-4f20-8d03-8ba2ad9d379c.mp4"
+  "https://www.image2url.com/r2/default/videos/1779261429805-e3be240b-1e1d-4be5-90ea-f9797cd3b666.mp4"
 ];
 
 // Duplicate enough times to ensure smooth endless scrolling if viewport is extremely wide
-const EXTENDED_REELS = [...REELS, ...REELS];
+const EXTENDED_VIDEOS = [...REVIEW_VIDEOS, ...REVIEW_VIDEOS];
 
-export default function MyWork() {
+export default function ClientVideos() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start', skipSnaps: false, dragFree: true },
-    [AutoScroll({ playOnInit: true, stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.2, direction: 'forward' })]
+    [AutoScroll({ playOnInit: true, stopOnInteraction: false, stopOnMouseEnter: true, speed: 1.2, direction: 'backward' })]
   );
 
   const scrollPrev = useCallback(() => {
@@ -47,22 +40,47 @@ export default function MyWork() {
   }, [emblaApi]);
 
   return (
-    <section id="work" className="py-24 relative overflow-hidden bg-[#050816]">
+    <section className="py-20 md:py-24 relative overflow-hidden bg-[#050816]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="px-6 md:px-12 max-w-7xl mx-auto mb-12 relative z-40">
+      <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16 relative z-40 text-center">
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
+           initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
+           transition={{ duration: 0.8 }}
+           className="relative inline-block"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
-            My work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 drop-shadow-md">Reels</span>
+          {/* Animated glowing particles/orbs behind heading */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3] 
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-[40px] pointer-events-none"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.5, 0.2] 
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-[40px] pointer-events-none"
+          />
+          
+          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white drop-shadow-lg relative z-10">
+            Client Review <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Videos</span>
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full"
+            />
           </h2>
-          <p className="text-gray-400 max-w-2xl text-lg font-light">
-            A collection of my best video projects, showcasing dynamic editing, color grading, and visual storytelling.
+          <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto relative z-10 mt-6">
+            Watch Real Client Feedback & Experiences
           </p>
         </motion.div>
       </div>
@@ -88,14 +106,14 @@ export default function MyWork() {
         {/* Scroll Container */}
         <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing hide-scrollbar" style={{ touchAction: 'pan-y' }}>
           <div className="flex gap-4 md:gap-10 py-4 md:py-8 px-[5vw]">
-            {EXTENDED_REELS.map((reelSrc, index) => (
+            {EXTENDED_VIDEOS.map((reelSrc, index) => (
               <div key={index} className="flex-[0_0_70vw] sm:flex-[0_0_260px] md:flex-[0_0_320px] min-w-0 pl-0">
-                <ReelPreviewItem src={reelSrc} />
+                <VideoPreviewItem src={reelSrc} />
               </div>
             ))}
           </div>
         </div>
-
+        
         {/* Edge Overlays to soften the scrolling cutoffs */}
         <div className="absolute top-0 bottom-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#050816] to-transparent z-40 pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#050816] to-transparent z-40 pointer-events-none" />
@@ -104,7 +122,7 @@ export default function MyWork() {
   );
 }
 
-function ReelPreviewItem({ 
+function VideoPreviewItem({ 
   src 
 }: { 
   src: string; 
@@ -118,8 +136,6 @@ function ReelPreviewItem({
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
-      
-      // Ensure the video plays if toggling mute interrupted it somehow
       videoRef.current.play().catch(() => {});
     }
   };
@@ -127,7 +143,6 @@ function ReelPreviewItem({
   useEffect(() => {
     if (!itemRef.current) return;
     
-    // Load video if it's close to viewport
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
