@@ -10,7 +10,11 @@ const REELS = [
   "https://www.image2url.com/r2/default/videos/1779261429805-e3be240b-1e1d-4be5-90ea-f9797cd3b666.mp4",
   "https://www.image2url.com/r2/default/videos/1779261464932-d74b0fc3-014c-4204-afd4-6dfd16bd05ff.mp4",
   "https://www.image2url.com/r2/default/videos/1779261508330-8d6eec14-4393-41f6-bcff-f9ba96d2cf3f.mp4",
-  "https://www.image2url.com/r2/default/videos/1779261556737-946bc1c5-4f92-4cb4-9524-723d0af3297f.mp4"
+  "https://www.image2url.com/r2/default/videos/1779261556737-946bc1c5-4f92-4cb4-9524-723d0af3297f.mp4",
+  "https://www.image2url.com/r2/default/videos/1779346987862-911615f0-a4aa-433c-a657-93153687cc0e.mp4",
+  "https://www.image2url.com/r2/default/videos/1779347132865-3bfa92e5-b7c7-4dda-aee4-82859e8df348.mp4",
+  "https://www.image2url.com/r2/default/videos/1779347304810-9a6fddfc-cc77-42d9-850f-f5d5fc6f7d9b.mp4",
+  "https://www.image2url.com/r2/default/videos/1779347346016-c1fb2ca3-5d50-4f20-8d03-8ba2ad9d379c.mp4"
 ];
 
 // Duplicate enough times to ensure smooth endless scrolling

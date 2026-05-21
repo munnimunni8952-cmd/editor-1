@@ -89,10 +89,10 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <a 
-            href="#contact"
-            className="text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#4DA3FF] transition-all duration-300 text-white"
+            href="tel:+916377033649"
+            className="text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(167,139,250,0.18)]"
           >
-            Contact
+            Contact Us
           </a>
         </div>
 
@@ -167,10 +167,9 @@ export default function Navbar() {
                   Call Now — 6377033649
                 </a>
                 <a 
-                  href="#contact"
+                  href="tel:+916377033649"
                   onClick={toggleMenu}
-                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-white/[0.04] hover:bg-white/10 border transition-all duration-300 text-white"
-                  style={{ borderColor: 'rgba(255,255,255,0.08)' }}
+                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/10 hover:border-[#A78BFA] transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(167,139,250,0.18)]"
                 >
                   Contact Us
                 </a>

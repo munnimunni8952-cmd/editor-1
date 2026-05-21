@@ -6,13 +6,13 @@ const videoIds = [
   "ac9rf69be4s",
   "qVLGSiZg7hA",
   "en4973sT7w0",
-  "ZjFgeB24MWw",
-  "EHxouXdxhaw",
   "rV426NyM9HI",
-  "VAZorx8peqQ",
   "p_IMw2PIE54",
+  "EHxouXdxhaw",
   "AblIjVTEtGY",
-  "pIQeQfwqyCg"
+  "pIQeQfwqyCg",
+  "VAZorx8peqQ",
+  "ZjFgeB24MWw"
 ];
 
 const VideoCard = ({ videoId, index }: { videoId: string; index: number }) => {

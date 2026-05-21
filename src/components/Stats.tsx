@@ -30,7 +30,7 @@ const statsData = [
   { 
     label: "Delivery", 
     value: 24, 
-    suffix: "hr", 
+    suffix: " HR", 
     icon: Clock, 
     color: "from-emerald-400 to-teal-500",
     shadow: "group-hover:shadow-emerald-500/20"
