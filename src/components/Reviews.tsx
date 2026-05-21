@@ -151,7 +151,7 @@ export default function Reviews() {
         </motion.div>
       </div>
 
-      <div className="relative w-full max-w-[100vw] overflow-hidden px-6 md:px-12 group">
+      <div className="relative w-full overflow-hidden px-6 md:px-12 group">
         <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
           <div className="flex gap-6 pt-4 pb-12">
             {REVIEWS.map((review, index) => (

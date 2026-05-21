@@ -43,7 +43,7 @@ function TypewriterEffect() {
   }, [subIndex, index, reverse]);
 
   return (
-    <span className="inline-flex items-center justify-center h-[1.2em] min-w-[300px] md:min-w-[600px]">
+    <span className="inline-flex items-center justify-center h-[1.2em] min-w-[280px] md:min-w-[600px]">
       <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(77,163,255,0.4)]">
         {WORDS[index].substring(0, subIndex)}
       </span>
@@ -76,7 +76,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div 
-          className="absolute top-0 left-0 w-full h-[100vh] md:hidden"
+          className="absolute inset-0 md:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -95,7 +95,7 @@ export default function Hero() {
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
 
         <motion.h1 
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[1.1] md:leading-[1.1] text-white flex flex-col items-center justify-center text-center w-full min-h-[160px] md:min-h-[220px] mb-6"
+          className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[1.1] md:leading-[1.1] text-white flex flex-col items-center justify-center text-center w-full min-h-[140px] md:min-h-[220px] mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -134,16 +134,6 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
               </button>
             </div>
-
-            <a
-              href="#work"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 glass-card text-white font-semibold rounded-full transition-all hover:bg-white/10"
-            >
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                <Play className="w-4 h-4" />
-              </div>
-              Explore Portfolio
-            </a>
           </div>
         </motion.div>
       </div>

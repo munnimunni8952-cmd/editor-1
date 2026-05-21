@@ -43,7 +43,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6">
               Let's Create <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">Something Epic</span>
             </h2>
