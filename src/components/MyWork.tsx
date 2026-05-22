@@ -86,6 +86,7 @@ export default function MyWork() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
             My work{" "}
@@ -93,7 +94,7 @@ export default function MyWork() {
               Reels
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl text-lg font-light">
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
             A collection of my best video projects, showcasing dynamic editing,
             color grading, and visual storytelling.
           </p>

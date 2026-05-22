@@ -78,13 +78,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-1 flex-wrap items-center justify-center gap-6 text-sm font-medium text-gray-300">
-          <a href="#long-form" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Long Form</a>
+          <a href="#" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Home</a>
           <a href="#services" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Services</a>
-          <a href="#reviews" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Reviews</a>
-          <a href="#studio" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Studio</a>
+          <a href="#work" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Portfolio</a>
           <a href="#team" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Team</a>
-          <a href="#skills" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Skills</a>
+          <a href="#reviews" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Testimonials</a>
           <a href="#pricing" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Pricing</a>
+          <a href="#contact" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Contact</a>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -147,13 +147,13 @@ export default function Navbar() {
 
               {/* Navigation Links */}
               <div className="flex flex-col gap-1 p-4 overflow-y-auto">
-                <MobileMenuLink href="#long-form" onClick={toggleMenu} index={1}>Long Form</MobileMenuLink>
+                <MobileMenuLink href="#" onClick={toggleMenu} index={1}>Home</MobileMenuLink>
                 <MobileMenuLink href="#services" onClick={toggleMenu} index={2}>Services</MobileMenuLink>
-                <MobileMenuLink href="#reviews" onClick={toggleMenu} index={3}>Reviews</MobileMenuLink>
-                <MobileMenuLink href="#studio" onClick={toggleMenu} index={4}>Studio</MobileMenuLink>
-                <MobileMenuLink href="#team" onClick={toggleMenu} index={5}>Team</MobileMenuLink>
-                <MobileMenuLink href="#skills" onClick={toggleMenu} index={6}>Skills</MobileMenuLink>
-                <MobileMenuLink href="#pricing" onClick={toggleMenu} index={7}>Pricing</MobileMenuLink>
+                <MobileMenuLink href="#work" onClick={toggleMenu} index={3}>Portfolio</MobileMenuLink>
+                <MobileMenuLink href="#team" onClick={toggleMenu} index={4}>Team</MobileMenuLink>
+                <MobileMenuLink href="#reviews" onClick={toggleMenu} index={5}>Testimonials</MobileMenuLink>
+                <MobileMenuLink href="#pricing" onClick={toggleMenu} index={6}>Pricing</MobileMenuLink>
+                <MobileMenuLink href="#contact" onClick={toggleMenu} index={7}>Contact</MobileMenuLink>
               </div>
 
               {/* Footer CTA */}
