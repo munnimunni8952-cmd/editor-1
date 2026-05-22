@@ -65,31 +65,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <motion.div 
-          style={{ y, scale }}
-          className="absolute inset-[-10%] w-[120%] h-[120%] hidden md:block"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          <div className="absolute inset-0 hero-bg-image" />
-        </motion.div>
-
-        <motion.div 
-          className="absolute inset-0 md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          <div className="absolute inset-0 hero-bg-image" />
-        </motion.div>
-        
-        {/* Dark Overlays for text visibility and smooth transition to next section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0b0f]/10 via-[#0c0b0f]/30 to-[#0c0b0f] pointer-events-none" />
-
         {/* Cinematic glow overlays - hidden on mobile for performance */}
-        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/30 blur-[80px] mix-blend-screen" />
-        <div className="hidden md:block absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/20 blur-[80px] mix-blend-screen" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/10 blur-[100px] mix-blend-screen" />
+        <div className="hidden md:block absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/10 blur-[100px] mix-blend-screen" />
       </div>
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">

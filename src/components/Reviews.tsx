@@ -128,7 +128,7 @@ export default function Reviews() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#050816]">
+    <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
 

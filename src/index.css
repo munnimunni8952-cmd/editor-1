@@ -12,7 +12,8 @@
 }
 
 html, body, #root {
-  background-color: var(--color-dark-bg);
+  background: radial-gradient(circle at top, #1f1f1f, #000);
+  background-attachment: fixed;
   color: white;
   width: 100%;
   max-width: 100%;
@@ -93,29 +94,4 @@ html, body, #root {
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-.hero-bg-image {
-  background-image: 
-    linear-gradient(rgba(12,11,15,0.30), rgba(12,11,15,0.40)),
-    url('https://i.ibb.co/XZm6bskw/Whats-App-Image-2026-05-20-at-12-08-18-PM.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: rgba(12,11,15,0.18);
-  background-blend-mode: soft-light;
-  image-rendering: high-quality;
-  filter: contrast(1.08) brightness(1.05) saturate(1.08);
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-@media (max-width: 768px) {
-  .hero-bg-image {
-    background-image: none;
-    background-color: black;
-  }
 }

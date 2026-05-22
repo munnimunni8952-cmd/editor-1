@@ -449,7 +449,7 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#050816]">
+    <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Dynamic Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-sky-600/10 blur-[120px] rounded-full pointer-events-none" />

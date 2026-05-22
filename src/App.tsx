@@ -30,7 +30,7 @@ export default function App() {
       <WorkModal />
       
       <Navbar />
-      <main className="relative bg-black text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden w-full">
+      <main className="relative bg-transparent text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden w-full">
         <Hero />
         <MyWork />
         <LongFormVideos />

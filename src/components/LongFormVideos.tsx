@@ -84,7 +84,7 @@ const VideoCard: React.FC<{ videoId: string; index: number }> = ({ videoId, inde
 
 export default function LongFormVideos() {
   return (
-    <section id="long-form" className="py-32 relative bg-[#0c0b0f] overflow-hidden">
+    <section id="long-form" className="py-32 relative bg-transparent overflow-hidden">
       {/* Spotlight Effect and Blobs */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#A78BFA]/20 to-transparent" />
       <div className="absolute top-32 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#A78BFA]/5 blur-[120px] rounded-[100%] pointer-events-none" />

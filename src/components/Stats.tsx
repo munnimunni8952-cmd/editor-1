@@ -77,7 +77,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
 export default function Stats() {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#030303] border-y border-white/5">
+    <section className="py-24 relative overflow-hidden bg-transparent border-y border-white/5">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {statsData.map((stat, index) => {

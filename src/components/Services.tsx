@@ -187,7 +187,7 @@ const TiltCard: React.FC<{ service: typeof services[0], index: number }> = ({ se
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 relative overflow-hidden bg-black">
+    <section id="services" className="py-32 relative overflow-hidden bg-transparent">
       <GlowingOrbs />
 
       <div className="container mx-auto px-6 relative z-10">

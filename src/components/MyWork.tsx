@@ -76,7 +76,7 @@ export default function MyWork() {
   }, [emblaApi]);
 
   return (
-    <section id="work" className="py-24 relative overflow-hidden bg-[#050816]">
+    <section id="work" className="py-24 relative overflow-hidden bg-transparent">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 

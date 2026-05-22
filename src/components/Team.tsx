@@ -123,7 +123,7 @@ const TeamCard: React.FC<{ member: typeof teamMembers[0], index: number }> = ({ 
 
 export default function Team() {
   return (
-    <section id="team" className="py-32 relative overflow-hidden bg-[#050816]">
+    <section id="team" className="py-32 relative overflow-hidden bg-transparent">
       {/* Premium Cinematic Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
       
