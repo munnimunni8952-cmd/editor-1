@@ -187,10 +187,10 @@ export default function Team() {
             <button 
               onClick={(e) => {
                 e.preventDefault();
-                window.dispatchEvent(new CustomEvent('open-work-modal'));
+                window.open('https://wa.me/916377033649?text=Hello%2C%20I%20want%20to%20work%20with%20you.', '_blank');
               }}
               className="group relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out bg-white/5 border border-white/10 rounded-full hover:bg-blue-600 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:text-white hover:scale-105 active:scale-95">
-              <span>Join Our Team</span>
+              <span>Work With Us</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

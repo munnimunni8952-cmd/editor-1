@@ -103,12 +103,12 @@ export default function Hero() {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  window.dispatchEvent(new CustomEvent('open-work-modal'));
+                  window.open('https://wa.me/916377033649?text=Hello%2C%20I%20want%20to%20work%20with%20you.', '_blank');
                 }}
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full"
               >
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Join Our Team</span>
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Work With Us</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
               </button>
             </div>
