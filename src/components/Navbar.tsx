@@ -84,7 +84,7 @@ export default function Navbar() {
           <a href="#team" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Team</a>
           <a href="#reviews" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Testimonials</a>
           <a href="#pricing" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Pricing</a>
-          <a href="#contact" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Contact</a>
+          <a href="tel:+916377033649" className="hover:text-[#4DA3FF] hover:shadow-[0_0_15px_rgba(77,163,255,0.4)] transition-all">Contact</a>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -153,7 +153,7 @@ export default function Navbar() {
                 <MobileMenuLink href="#team" onClick={toggleMenu} index={4}>Team</MobileMenuLink>
                 <MobileMenuLink href="#reviews" onClick={toggleMenu} index={5}>Testimonials</MobileMenuLink>
                 <MobileMenuLink href="#pricing" onClick={toggleMenu} index={6}>Pricing</MobileMenuLink>
-                <MobileMenuLink href="#contact" onClick={toggleMenu} index={7}>Contact</MobileMenuLink>
+                <MobileMenuLink href="tel:+916377033649" onClick={toggleMenu} index={7}>Contact</MobileMenuLink>
               </div>
 
               {/* Footer CTA */}
