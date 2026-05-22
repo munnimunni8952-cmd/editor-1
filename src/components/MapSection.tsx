@@ -37,14 +37,14 @@ export default function MapSection() {
           Available for worldwide remote projects.
         </p>
         <div className="text-white text-sm font-medium flex items-center gap-2 mb-6">
-          <MapPin className="w-4 h-4 text-[#4DA3FF]" /> 
+          <MapPin className="w-4 h-4 text-fuchsia-400" /> 
           <span className="font-mono text-xs opacity-80">26°58'35.4"N 75°43'36.7"E</span>
         </div>
         <a 
           href="https://www.google.com/maps?q=26.976500,75.726861"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-[#4DA3FF] hover:text-black hover:shadow-[0_0_20px_rgba(77,163,255,0.4)] transition-all duration-300"
+          className="inline-flex items-center justify-center w-full py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-fuchsia-500 hover:text-black hover:shadow-[0_0_15px_rgba(217,70,239,0.3)] transition-all duration-300"
         >
           Open Location
         </a>

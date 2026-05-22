@@ -16,77 +16,45 @@ const services = [
     title: "Short Form Editing",
     icon: Clapperboard,
     features: ["Reels", "Shorts", "TikTok Style"],
-    color: "from-pink-500 to-cyan-400",
-    shadow: "shadow-pink-500/30"
+    color: "from-fuchsia-500 to-purple-500",
+    shadow: "shadow-fuchsia-500/20"
   },
   {
     title: "Long Form Editing",
     icon: MonitorPlay,
     features: ["YouTube Videos", "Podcasts", "Documentary Edits"],
-    color: "from-cyan-400 to-blue-600",
-    shadow: "shadow-cyan-400/30"
+    color: "from-purple-400 to-fuchsia-500",
+    shadow: "shadow-purple-500/20"
   },
   {
     title: "Ads Editing",
     icon: Target,
     features: ["Meta Ads", "Product Promos", "Brand Commercials"],
-    color: "from-purple-500 to-pink-500",
-    shadow: "shadow-purple-500/30"
+    color: "from-purple-500 to-fuchsia-400",
+    shadow: "shadow-fuchsia-500/20"
   },
   {
     title: "Motion Graphics",
     icon: Wand2,
     features: ["Text Animation", "Logo Animation", "Smooth Transitions"],
-    color: "from-emerald-400 to-cyan-500",
-    shadow: "shadow-emerald-400/30"
+    color: "from-fuchsia-500 to-purple-600",
+    shadow: "shadow-purple-500/20"
   },
   {
     title: "Thumbnail Design",
     icon: ImageIcon,
     features: ["High CTR", "Custom Graphics", "A/B Testing Ready"],
-    color: "from-orange-500 to-rose-500",
-    shadow: "shadow-orange-500/30"
+    color: "from-purple-500 to-fuchsia-500",
+    shadow: "shadow-fuchsia-500/20"
   },
   {
     title: "Social Media Management",
     icon: Share2,
     features: ["Content Strategy", "Scheduling", "Analytics Tracking"],
-    color: "from-indigo-500 to-purple-500",
-    shadow: "shadow-indigo-500/30"
+    color: "from-fuchsia-400 to-purple-500",
+    shadow: "shadow-purple-500/20"
   }
 ];
-
-const GlowingOrbs = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-    <motion.div
-      animate={{
-        x: [0, 100, -50, 0],
-        y: [0, -100, 100, 0],
-        scale: [1, 1.2, 0.8, 1],
-      }}
-      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full mix-blend-screen blur-[120px]"
-    />
-    <motion.div
-      animate={{
-        x: [0, -100, 50, 0],
-        y: [0, 100, -100, 0],
-        scale: [1, 0.9, 1.1, 1],
-      }}
-      transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-      className="absolute top-[40%] right-[5%] w-[400px] h-[400px] bg-cyan-600/20 rounded-full mix-blend-screen blur-[100px]"
-    />
-    <motion.div
-      animate={{
-        x: [0, 150, -100, 0],
-        y: [0, 50, -50, 0],
-        scale: [1, 1.1, 0.9, 1],
-      }}
-      transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-      className="absolute bottom-[0%] left-[30%] w-[600px] h-[600px] bg-pink-600/10 rounded-full mix-blend-screen blur-[150px]"
-    />
-  </div>
-);
 
 const TiltCard: React.FC<{ service: typeof services[0], index: number }> = ({ service, index }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -188,7 +156,8 @@ const TiltCard: React.FC<{ service: typeof services[0], index: number }> = ({ se
 export default function Services() {
   return (
     <section id="services" className="py-32 relative overflow-hidden bg-transparent">
-      <GlowingOrbs />
+      {/* Subtle Neon Glow for the heading area */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[40%] h-[100px] bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 blur-[50px] pointer-events-none rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
@@ -196,15 +165,15 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-20 relative z-10"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse shadow-[0_0_10px_rgba(217,70,239,0.5)]" />
             <span className="text-sm font-medium tracking-wide text-neutral-300 uppercase">Our Expertise</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Premium <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Services</span>
+            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500 drop-shadow-[0_0_10px_rgba(217,70,239,0.2)]">Services</span>
           </h2>
           <p className="text-lg text-neutral-400 leading-relaxed">
             Elevate your brand with cinematic visuals, seamless storytelling, and high-converting video content tailored for the modern digital landscape.

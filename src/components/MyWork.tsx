@@ -77,20 +77,21 @@ export default function MyWork() {
 
   return (
     <section id="work" className="py-24 relative overflow-hidden bg-transparent">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
-
+      {/* Background glow - removed for pure black */}
       <div className="px-6 md:px-12 max-w-7xl mx-auto mb-12 relative z-40">
+        {/* Subtle Neon Glow for the heading area */}
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[40%] h-[100px] bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 blur-[50px] pointer-events-none rounded-full" />
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center"
+          className="flex flex-col items-center text-center relative z-10"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
             My work{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 drop-shadow-md">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500 drop-shadow-[0_0_10px_rgba(217,70,239,0.2)]">
               Reels
             </span>
           </h2>
@@ -105,7 +106,7 @@ export default function MyWork() {
         {/* Navigation Arrows */}
         <button
           onClick={scrollPrev}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-blue-600/20 border border-white/20 hover:border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-blue-500 md:opacity-0 md:group-hover/slider:opacity-100"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-fuchsia-600/20 border border-white/20 hover:border-fuchsia-500/50 shadow-[0_0_20px_rgba(217,70,239,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-fuchsia-500 md:opacity-0 md:group-hover/slider:opacity-100"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 hover:-translate-x-1 transition-transform" />
@@ -113,7 +114,7 @@ export default function MyWork() {
 
         <button
           onClick={scrollNext}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-blue-600/20 border border-white/20 hover:border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-blue-500 md:opacity-0 md:group-hover/slider:opacity-100"
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-fuchsia-600/20 border border-white/20 hover:border-fuchsia-500/50 shadow-[0_0_20px_rgba(217,70,239,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-fuchsia-500 md:opacity-0 md:group-hover/slider:opacity-100"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-6 h-6 md:w-8 md:h-8 hover:translate-x-1 transition-transform" />
@@ -234,14 +235,14 @@ function ReelPreviewItem({
           }
         }
       }}
-      className={`group relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 transform bg-[#0B1225]/65 backdrop-blur-md shadow-lg border border-white/10 hover:border-blue-400/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]`}
+      className={`group relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 transform bg-[#0B1225]/65 backdrop-blur-md shadow-lg border border-white/10 hover:border-fuchsia-400/40 hover:shadow-[0_0_20px_rgba(217,70,239,0.3)]`}
       style={{
         WebkitBackfaceVisibility: "hidden",
         backfaceVisibility: "hidden",
         transform: "translateZ(0)",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-transparent to-blue-500/0 opacity-0 group-hover:from-blue-500/10 group-hover:to-blue-500/5 transition-opacity duration-500 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/0 via-transparent to-fuchsia-500/0 opacity-0 group-hover:from-fuchsia-500/10 group-hover:to-fuchsia-500/5 transition-opacity duration-500 pointer-events-none z-10" />
 
       {shouldLoad && (
         <video
@@ -260,7 +261,7 @@ function ReelPreviewItem({
         className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none z-30 ${isPlaying ? "opacity-0" : "opacity-100"}`}
       >
         <div
-          className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md shadow-[0_0_30px_rgba(59,130,246,0.5)] border border-blue-400/50 text-white transition-transform"
+          className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md shadow-[0_0_30px_rgba(217,70,239,0.5)] border border-fuchsia-400/50 text-white transition-transform"
         >
           <Play className="w-8 h-8 md:w-10 md:h-10 ml-2" fill="currentColor" />
         </div>
@@ -271,7 +272,7 @@ function ReelPreviewItem({
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#050816]/90 to-transparent" />
         <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
           <div
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 flex items-center justify-center border border-white/20 hover:border-blue-400/50 hover:bg-blue-600/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] transform transition-all duration-300 backdrop-blur-md pointer-events-auto cursor-pointer"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 flex items-center justify-center border border-white/20 hover:border-fuchsia-400/50 hover:bg-fuchsia-600/30 shadow-[0_0_15px_rgba(217,70,239,0.2)] transform transition-all duration-300 backdrop-blur-md pointer-events-auto cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               toggleMute();

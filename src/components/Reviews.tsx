@@ -130,7 +130,7 @@ export default function Reviews() {
   return (
     <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-fuchsia-600/10 blur-[60px] rounded-full pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16">
         <motion.div
@@ -138,26 +138,26 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-8 text-center md:text-left"
+          className="flex flex-col items-center justify-center gap-6 text-center"
         >
-          <div>
+          <div className="flex flex-col items-center">
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4 text-white">
-              Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Reviews</span>
+              Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-fuchsia-600">Reviews</span>
             </h2>
             <p className="text-gray-400 text-lg font-light">Don't just take our word for it.</p>
           </div>
           
-          <div className="flex items-center justify-center gap-4 relative z-50">
+          <div className="flex items-center justify-center gap-4 relative z-50 mt-2">
             <button
               onClick={scrollPrev}
-              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
+              className="p-3 rounded-full border border-white/10 hover:border-fuchsia-500/50 hover:bg-fuchsia-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
               aria-label="Previous review"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="p-3 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
+              className="p-3 rounded-full border border-white/10 hover:border-fuchsia-500/50 hover:bg-fuchsia-500/10 transition-all text-white/70 hover:text-white cursor-pointer"
               aria-label="Next review"
             >
               <ChevronRight className="w-6 h-6" />
@@ -173,24 +173,24 @@ export default function Reviews() {
               <div key={review.id} className="flex-[0_0_85%] sm:flex-[0_0_300px] md:flex-[0_0_400px] min-w-0">
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="h-full bg-[#0B1225]/60 backdrop-blur-xl p-8 rounded-3xl relative transition-all duration-500 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] border border-white/5 hover:border-blue-500/40 overflow-hidden group/card flex flex-col justify-between"
+                  className="h-full bg-[#0B1225]/60 backdrop-blur-xl p-8 rounded-3xl relative transition-all duration-500 hover:shadow-[0_0_40px_rgba(217,70,239,0.3)] border border-white/5 hover:border-fuchsia-500/40 overflow-hidden group/card flex flex-col justify-between"
                 >
                   <div>
                     {/* Glow Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     <div className="flex items-center gap-4 mb-6 relative z-10">
-                      <div className="relative overflow-hidden rounded-full w-14 h-14 shrink-0 border border-white/10 group-hover/card:border-blue-500/50 transition-colors shadow-lg">
-                        <div className="absolute inset-0 bg-blue-500 rounded-full blur-md opacity-20 group-hover/card:opacity-50 transition-opacity" />
+                      <div className="relative overflow-hidden rounded-full w-14 h-14 shrink-0 border border-white/10 group-hover/card:border-fuchsia-500/50 transition-colors shadow-lg">
+                        <div className="absolute inset-0 bg-fuchsia-500 rounded-full blur-md opacity-20 group-hover/card:opacity-50 transition-opacity" />
                         <img src={review.image} alt={review.name} loading="lazy" className="w-full h-full object-cover relative z-10 group-hover/card:scale-110 transition-transform duration-700 ease-out" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg text-white group-hover/card:text-blue-100 transition-colors">{review.name}</h4>
-                        <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">{review.role}</p>
+                        <h4 className="font-bold text-lg text-white group-hover/card:text-fuchsia-100 transition-colors">{review.name}</h4>
+                        <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-fuchsia-500">{review.role}</p>
                       </div>
                     </div>
                     
-                    <div className="flex gap-1 mb-4 relative z-10 w-fit group-hover/card:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] transition-all duration-300">
+                    <div className="flex gap-1 mb-4 relative z-10 w-fit group-hover/card:drop-shadow-[0_0_8px_rgba(217,70,239,0.5)] transition-all duration-300">
                       {[...Array(5)].map((_, i) => {
                         const isFull = i < Math.floor(review.rating);
                         const isHalf = !isFull && i < Math.ceil(review.rating);
@@ -206,16 +206,16 @@ export default function Reviews() {
                             style={{ transitionDelay: `${i * 50}ms` }}
                           >
                             {isFull ? (
-                              <Star className="w-4 h-4 fill-blue-500 text-blue-500" />
+                              <Star className="w-4 h-4 fill-fuchsia-500 text-fuchsia-500" />
                             ) : isHalf ? (
                               <div className="relative">
-                                <Star className="w-4 h-4 text-blue-500/30" />
+                                <Star className="w-4 h-4 text-fuchsia-500/30" />
                                 <div className="absolute inset-0 overflow-hidden w-[50%]">
-                                  <Star className="w-4 h-4 fill-blue-500 text-blue-500" />
+                                  <Star className="w-4 h-4 fill-fuchsia-500 text-fuchsia-500" />
                                 </div>
                               </div>
                             ) : (
-                              <Star className="w-4 h-4 text-blue-500/30" />
+                              <Star className="w-4 h-4 text-fuchsia-500/30" />
                             )}
                           </motion.div>
                         );
@@ -226,7 +226,7 @@ export default function Reviews() {
                   </div>
                   
                   {/* Quote decoration */}
-                  <div className="absolute -top-4 -right-4 text-9xl font-display text-white/[0.02] group-hover/card:text-blue-500/[0.05] transition-colors duration-500 select-none pointer-events-none">"</div>
+                  <div className="absolute -top-4 -right-4 text-9xl font-display text-white/[0.02] group-hover/card:text-fuchsia-500/[0.05] transition-colors duration-500 select-none pointer-events-none">"</div>
                 </motion.div>
               </div>
             ))}
@@ -235,10 +235,10 @@ export default function Reviews() {
 
         {/* Edge Gradients / Motion Blur Emulation */}
         <div className="absolute top-0 bottom-0 left-0 w-16 md:w-40 bg-gradient-to-r from-[#050816] via-[#050816]/80 to-transparent z-10 pointer-events-none flex items-center justify-start">
-           <div className="absolute left-0 w-32 h-full bg-blue-600/10 blur-[50px] mix-blend-screen" />
+           <div className="absolute left-0 w-32 h-full bg-fuchsia-600/10 blur-[50px] mix-blend-screen" />
         </div>
         <div className="absolute top-0 bottom-0 right-0 w-16 md:w-40 bg-gradient-to-l from-[#050816] via-[#050816]/80 to-transparent z-10 pointer-events-none flex items-center justify-end">
-           <div className="absolute right-0 w-32 h-full bg-blue-600/10 blur-[50px] mix-blend-screen" />
+           <div className="absolute right-0 w-32 h-full bg-fuchsia-600/10 blur-[50px] mix-blend-screen" />
         </div>
       </div>
     </section>

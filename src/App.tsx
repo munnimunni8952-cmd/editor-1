@@ -21,6 +21,7 @@ import MapSection from './components/MapSection';
 import FloatingSocials from './components/FloatingSocials';
 import LoadingScreen from './components/LoadingScreen';
 import WorkModal from './components/WorkModal';
+import JoinTeamModal from './components/JoinTeamModal';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 export default function App() {
@@ -28,9 +29,10 @@ export default function App() {
     <>
       <LoadingScreen />
       <WorkModal />
+      <JoinTeamModal />
       
       <Navbar />
-      <main className="relative bg-transparent text-white selection:bg-cyan-500/30 font-sans overflow-x-hidden w-full">
+      <main className="relative bg-transparent text-white selection:bg-fuchsia-500/30 font-sans overflow-x-hidden w-full">
         <Hero />
         <MyWork />
         <LongFormVideos />

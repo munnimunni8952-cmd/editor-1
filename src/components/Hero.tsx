@@ -44,13 +44,13 @@ function TypewriterEffect() {
 
   return (
     <span className="inline-flex items-center justify-center h-[1.2em] min-w-[280px] md:min-w-[600px]">
-      <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(77,163,255,0.4)]">
+      <span className="bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(217,70,239,0.3)]">
         {WORDS[index].substring(0, subIndex)}
       </span>
       <span 
-        className={`inline-block w-[4px] h-[0.9em] md:w-[6px] ml-1 md:ml-2 md:h-[0.8em] bg-[#4DA3FF] rounded-full transition-opacity duration-100 ${
+        className={`inline-block w-[4px] h-[0.9em] md:w-[6px] ml-1 md:ml-2 md:h-[0.8em] bg-fuchsia-500 rounded-full transition-opacity duration-100 ${
           blink ? 'opacity-100' : 'opacity-0'
-        } drop-shadow-[0_0_10px_rgba(77,163,255,0.8)]`} 
+        } drop-shadow-[0_0_10px_rgba(217,70,239,0.8)]`} 
       />
     </span>
   );
@@ -66,8 +66,8 @@ export default function Hero() {
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Cinematic glow overlays - hidden on mobile for performance */}
-        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[40vw] md:h-[40vw] rounded-full bg-blue-600/10 blur-[100px] mix-blend-screen" />
-        <div className="hidden md:block absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 md:w-[30vw] md:h-[30vw] rounded-full bg-pink-600/10 blur-[100px] mix-blend-screen" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[40vw] md:h-[40vw] rounded-full bg-fuchsia-600/10 blur-[60px] mix-blend-screen" />
+        <div className="hidden md:block absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 md:w-[30vw] md:h-[30vw] rounded-full bg-fuchsia-600/10 blur-[60px] mix-blend-screen" />
       </div>
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
@@ -99,16 +99,16 @@ export default function Hero() {
         >
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <div className="relative group/btn">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] rounded-full blur-md opacity-40 animate-pulse" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-fuchsia-400 to-purple-500 rounded-full blur-md opacity-40 animate-pulse" />
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  window.open('https://wa.me/916377033649?text=Hello%2C%20I%20want%20to%20work%20with%20you.', '_blank');
+                  window.dispatchEvent(new CustomEvent('open-work-modal'));
                 }}
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 active:scale-95 w-full"
               >
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Work With Us</span>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-fuchsia-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Discuss Your Project</span>
                 <ArrowRight className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
               </button>
             </div>

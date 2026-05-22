@@ -18,11 +18,11 @@ const CATEGORIES = [
           "HD Quality",
           "Fast Delivery"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "reel-advanced",
@@ -37,10 +37,10 @@ const CATEGORIES = [
           "Sound Design",
           "Premium Captions"
         ],
-        borderClass: "border-blue-500/40 group-hover:border-blue-400/80",
-        shadowClass: "hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]",
+        borderClass: "border-fuchsia-500/40 group-hover:border-fuchsia-400/80",
+        shadowClass: "hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]",
         btnText: "Get Started",
-        accentText: "text-blue-400",
+        accentText: "text-fuchsia-400",
         isPopular: true,
         glowColor: "rgba(96, 165, 250, 0.3)",
       },
@@ -80,10 +80,10 @@ const CATEGORIES = [
           "Movie-like feel",
           "Personal editor support"
         ],
-        borderClass: "border-[#4DA3FF]/40 group-hover:border-[#4DA3FF]/80",
-        shadowClass: "shadow-[0_0_30px_rgba(77,163,255,0.15)] hover:shadow-[0_0_70px_rgba(77,163,255,0.4)]",
+        borderClass: "border-fuchsia-500/40 group-hover:border-fuchsia-500/80",
+        shadowClass: "shadow-[0_0_30px_rgba(217,70,239,0.15)] hover:shadow-[0_0_70px_rgba(217,70,239,0.4)]",
         btnText: "Get Elite Edit",
-        accentText: "text-[#4DA3FF]",
+        accentText: "text-fuchsia-400",
         isPopular: true,
         glowColor: "rgba(77, 163, 255, 0.5)",
       }
@@ -104,11 +104,11 @@ const CATEGORIES = [
           "Captions",
           "HD Export"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "yt-advanced",
@@ -123,10 +123,10 @@ const CATEGORIES = [
           "Sound Design",
           "Premium Captions"
         ],
-        borderClass: "border-blue-500/40 group-hover:border-blue-400/80",
-        shadowClass: "hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]",
+        borderClass: "border-fuchsia-500/40 group-hover:border-fuchsia-400/80",
+        shadowClass: "hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]",
         btnText: "Get Started",
-        accentText: "text-blue-400",
+        accentText: "text-fuchsia-400",
         isPopular: true,
         glowColor: "rgba(96, 165, 250, 0.3)",
       },
@@ -163,12 +163,12 @@ const CATEGORIES = [
           "High-End Color Grading",
           "Premium Motion Graphics"
         ],
-        borderClass: "border-white/10 group-hover:border-blue-500/60",
-        shadowClass: "hover:shadow-[0_0_40px_rgba(59,130,246,0.25)]",
+        borderClass: "border-white/10 group-hover:border-fuchsia-500/60",
+        shadowClass: "hover:shadow-[0_0_40px_rgba(217,70,239,0.25)]",
         btnText: "Get Started",
         accentText: "text-gray-200",
         isPremium: true,
-        glowColor: "rgba(59, 130, 246, 0.2)",
+        glowColor: "rgba(217,70,239, 0.2)",
       }
     ]
   },
@@ -187,11 +187,11 @@ const CATEGORIES = [
           "Brand Posts",
           "Professional Layouts"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "gd-premium-post",
@@ -206,10 +206,10 @@ const CATEGORIES = [
           "Premium Visual Style",
           "Brand-Focused Design"
         ],
-        borderClass: "border-blue-500/40 group-hover:border-blue-400/80",
-        shadowClass: "hover:shadow-[0_0_50px_rgba(59,130,246,0.3)]",
+        borderClass: "border-fuchsia-500/40 group-hover:border-fuchsia-400/80",
+        shadowClass: "hover:shadow-[0_0_50px_rgba(217,70,239,0.3)]",
         btnText: "Get Started",
-        accentText: "text-blue-400",
+        accentText: "text-fuchsia-400",
         isPopular: true,
         glowColor: "rgba(96, 165, 250, 0.3)",
       },
@@ -225,11 +225,11 @@ const CATEGORIES = [
           "Professional Look",
           "YouTube Optimized"
         ],
-        borderClass: "border-white/10 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/10 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "gd-cinematic-thumb",
@@ -243,12 +243,12 @@ const CATEGORIES = [
           "Premium Effects",
           "High Click-Through Design"
         ],
-        borderClass: "border-white/10 group-hover:border-blue-500/60",
-        shadowClass: "hover:shadow-[0_0_40px_rgba(59,130,246,0.25)]",
+        borderClass: "border-white/10 group-hover:border-fuchsia-500/60",
+        shadowClass: "hover:shadow-[0_0_40px_rgba(217,70,239,0.25)]",
         btnText: "Get Started",
         accentText: "text-gray-200",
         isPremium: true,
-        glowColor: "rgba(59, 130, 246, 0.2)",
+        glowColor: "rgba(217,70,239, 0.2)",
       },
       {
         id: "gd-reel-cover",
@@ -262,11 +262,11 @@ const CATEGORIES = [
           "Professional Layout",
           "Matching Theme"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "gd-banner",
@@ -280,11 +280,11 @@ const CATEGORIES = [
           "Social Media Headers",
           "Brand Style Design"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "gd-carousel",
@@ -299,11 +299,11 @@ const CATEGORIES = [
           "Brand Style Design",
           "High Engagement Design"
         ],
-        borderClass: "border-white/5 group-hover:border-blue-500/50",
-        shadowClass: "hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+        borderClass: "border-white/5 group-hover:border-fuchsia-500/50",
+        shadowClass: "hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
         btnText: "Get Started",
         accentText: "text-gray-300",
-        glowColor: "rgba(59, 130, 246, 0.15)",
+        glowColor: "rgba(217,70,239, 0.15)",
       },
       {
         id: "gd-logo",
@@ -321,10 +321,10 @@ const CATEGORIES = [
           "Professional Typography",
           "Priority Delivery & Support"
         ],
-        borderClass: "border-[#4DA3FF]/40 group-hover:border-[#4DA3FF]/80",
-        shadowClass: "shadow-[0_0_30px_rgba(77,163,255,0.15)] hover:shadow-[0_0_70px_rgba(77,163,255,0.4)]",
+        borderClass: "border-fuchsia-500/40 group-hover:border-fuchsia-500/80",
+        shadowClass: "shadow-[0_0_30px_rgba(217,70,239,0.15)] hover:shadow-[0_0_70px_rgba(217,70,239,0.4)]",
         btnText: "Get Premium Logo",
-        accentText: "text-[#4DA3FF]",
+        accentText: "text-fuchsia-400",
         isPopular: true,
         glowColor: "rgba(77, 163, 255, 0.5)",
       }
@@ -373,16 +373,16 @@ const PricingCard: React.FC<{ plan: any; index: number; handleOrder: (name: stri
 
       {/* Floating Glow Behind Popular Card */}
       {plan.isPopular && (
-         <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-blue-400 opacity-30 blur-xl rounded-full z-0 pointer-events-none" />
+         <div className="absolute -inset-2 bg-gradient-to-r from-fuchsia-500 to-fuchsia-400 opacity-30 blur-xl rounded-full z-0 pointer-events-none" />
       )}
 
-      <div className={`relative h-full z-10 flex flex-col rounded-[23px] bg-[#050816] box-border overflow-hidden ${plan.isPopular ? 'transform hover:-translate-y-2 transition-transform duration-300 shadow-[0_0_30px_rgba(59,130,246,0.2)] bg-gradient-to-br from-[#0B1225] to-[#050816]' : 'bg-gradient-to-br from-[#050816] to-[#0a101f]'}`}>
+      <div className={`relative h-full z-10 flex flex-col rounded-[23px] bg-[#050816] box-border overflow-hidden ${plan.isPopular ? 'transform hover:-translate-y-2 transition-transform duration-300 shadow-[0_0_30px_rgba(217,70,239,0.2)] bg-gradient-to-br from-[#0B1225] to-[#050816]' : 'bg-gradient-to-br from-[#050816] to-[#0a101f]'}`}>
         
         {/* Badges */}
         {plan.badge && (
           <div className="absolute top-0 inset-x-0 flex justify-center translate-y-[-1px]">
             <div className={`px-4 py-1.5 rounded-b-xl text-[10px] font-bold tracking-widest uppercase flex items-center gap-1.5 shadow-lg ${
-              plan.isPopular ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white' : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white'
+              plan.isPopular ? 'bg-gradient-to-r from-fuchsia-500 to-fuchsia-600 text-white' : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white'
             }`}>
               {plan.isPopular && <Zap className="w-3.5 h-3.5" />}
               {plan.isPremium && <Crown className="w-3.5 h-3.5" />}
@@ -408,7 +408,7 @@ const PricingCard: React.FC<{ plan: any; index: number; handleOrder: (name: stri
           <div className="flex-grow space-y-4 mb-10">
             {plan.features.map((feature: string, i: number) => (
               <div key={i} className="flex items-start gap-3">
-                <CheckCircle2 className={`w-5 h-5 shrink-0 ${plan.isPopular ? 'text-blue-400' : 'text-gray-400'}`} />
+                <CheckCircle2 className={`w-5 h-5 shrink-0 ${plan.isPopular ? 'text-fuchsia-400' : 'text-gray-400'}`} />
                 <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
               </div>
             ))}
@@ -420,8 +420,8 @@ const PricingCard: React.FC<{ plan: any; index: number; handleOrder: (name: stri
             onClick={() => handleOrder(plan.title)}
             className={`w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 group/btn relative overflow-hidden transition-all duration-300 ${
               plan.isPopular 
-                ? `bg-gradient-to-r text-white shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.7)] from-blue-600 to-blue-500 border border-blue-400/50 backdrop-blur-md`
-                : `bg-gradient-to-r from-blue-900/40 to-blue-800/40 hover:from-blue-600 hover:to-blue-500 text-white border border-blue-500/30 hover:border-blue-400/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] backdrop-blur-md`
+                ? `bg-gradient-to-r text-white shadow-[0_0_20px_rgba(217,70,239,0.3)] hover:shadow-[0_0_40px_rgba(217,70,239,0.7)] from-fuchsia-600 to-fuchsia-500 border border-fuchsia-400/50 backdrop-blur-md`
+                : `bg-gradient-to-r from-fuchsia-900/40 to-fuchsia-800/40 hover:from-fuchsia-600 hover:to-fuchsia-500 text-white border border-fuchsia-500/30 hover:border-fuchsia-400/50 hover:shadow-[0_0_30px_rgba(217,70,239,0.5)] backdrop-blur-md`
             }`}
           >
             {/* Shimmer Effect */}
@@ -434,7 +434,7 @@ const PricingCard: React.FC<{ plan: any; index: number; handleOrder: (name: stri
             </div>
             
             {/* Soft Breathing Glow Container inside button on hover */}
-            <div className="absolute inset-0 bg-blue-400/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl" />
+            <div className="absolute inset-0 bg-fuchsia-400/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl" />
           </motion.button>
         </div>
       </div>
@@ -451,7 +451,7 @@ export default function Pricing() {
   return (
     <section className="py-24 relative overflow-hidden bg-transparent">
       {/* Dynamic Background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-fuchsia-600/10 blur-[60px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-sky-600/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-7xl mx-auto relative z-10">
@@ -462,12 +462,12 @@ export default function Pricing() {
            transition={{ duration: 0.6 }}
            className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-            <span className="w-2 h-2 rounded-full bg-blue-500 animate-[pulse_2s_ease-in-out_infinite]" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(217,70,239,0.1)]">
+            <span className="w-2 h-2 rounded-full bg-fuchsia-500 animate-[pulse_2s_ease-in-out_infinite]" />
             <span className="text-sm font-semibold tracking-wider text-gray-200 uppercase">Premium Creative Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight mb-6 text-white leading-tight">
-            Professional Video Editing <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">& Design Solutions</span>
+            Professional Video Editing <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-fuchsia-600">& Design Solutions</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
             For modern creators and brands looking to elevate their visual identity.
@@ -505,7 +505,7 @@ export default function Pricing() {
             const BadgeIcon = badge.icon;
             return (
               <div key={index} className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-full bg-[#0B1225] flex items-center justify-center text-blue-500 border border-white/10 shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-colors group-hover:border-blue-500/50 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                <div className="w-10 h-10 rounded-full bg-[#0B1225] flex items-center justify-center text-fuchsia-500 border border-white/10 shadow-[0_0_15px_rgba(217,70,239,0.1)] transition-colors group-hover:border-fuchsia-500/50 group-hover:shadow-[0_0_20px_rgba(217,70,239,0.2)]">
                   <BadgeIcon className="w-4 h-4" />
                 </div>
                 <span className="text-gray-400 font-medium text-sm md:text-base tracking-wide uppercase group-hover:text-gray-300 transition-colors">{badge.text}</span>

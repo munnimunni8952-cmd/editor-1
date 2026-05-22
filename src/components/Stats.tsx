@@ -8,15 +8,15 @@ const statsData = [
     value: 2000, 
     suffix: "+", 
     icon: Video, 
-    color: "from-[#4DA3FF] to-[#6EE7FF]",
-    shadow: "group-hover:shadow-[#4DA3FF]/20"
+    color: "from-fuchsia-400 to-purple-500",
+    shadow: "group-hover:shadow-[#d946ef]/20"
   },
   { 
     label: "VIEWS", 
     value: 20, 
     suffix: "M+", 
     icon: Eye, 
-    color: "from-purple-400 to-pink-500",
+    color: "from-purple-400 to-fuchsia-400",
     shadow: "group-hover:shadow-purple-500/20"
   },
   { 
@@ -24,16 +24,16 @@ const statsData = [
     value: 500, 
     suffix: "+", 
     icon: Users, 
-    color: "from-orange-400 to-red-500",
-    shadow: "group-hover:shadow-orange-500/20"
+    color: "from-fuchsia-500 to-purple-600",
+    shadow: "group-hover:shadow-fuchsia-500/20"
   },
   { 
     label: "Delivery", 
     value: 24, 
     suffix: " HR", 
     icon: Clock, 
-    color: "from-emerald-400 to-teal-500",
-    shadow: "group-hover:shadow-emerald-500/20"
+    color: "from-purple-500 to-fuchsia-500",
+    shadow: "group-hover:shadow-purple-500/20"
   },
 ];
 

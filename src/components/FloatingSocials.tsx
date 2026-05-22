@@ -5,10 +5,10 @@ export default function FloatingSocials() {
     <>
       {/* Left side fixed socials */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50 hidden lg:flex">
-        <a href="https://www.instagram.com/trimclipedits?igsh=cmU0N3dudnBjamRv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-pink-500 hover:neon-glow transition-all hover:scale-110">
+        <a href="https://www.instagram.com/trimclipedits?igsh=cmU0N3dudnBjamRv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-[#E1306C] hover:shadow-[0_0_15px_rgba(225,48,108,0.5)] transition-all hover:scale-110">
           <Instagram className="w-5 h-5" />
         </a>
-        <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-blue-500 hover:neon-glow transition-all hover:scale-110">
+        <a href="#" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-[#1877F2] hover:shadow-[0_0_15px_rgba(24,119,242,0.5)] transition-all hover:scale-110">
           <Facebook className="w-5 h-5" />
         </a>
       </div>

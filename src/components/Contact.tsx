@@ -1,69 +1,64 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2, UploadCloud, FileText } from 'lucide-react';
+import { Send, CheckCircle2 } from 'lucide-react';
+
+const EDIT_OPTIONS = [
+  "Reels",
+  "YouTube Videos",
+  "Shorts",
+  "Podcasts",
+  "Thumbnails",
+  "Logos",
+  "Social Media Posts",
+  "Cinematic Videos",
+  "Documentary Videos",
+  "Motion Graphics"
+];
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [fileError, setFileError] = useState('');
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [formData, setFormData] = useState({
+    name: '',
+    message: ''
+  });
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    if (file.type !== 'application/pdf') {
-      setFileError('⚠️ Only PDF files are allowed.');
-      setResumeFile(null);
-      return;
-    }
-
-    if (file.size > 10 * 1024 * 1024) {
-      setFileError('⚠️ File size must be less than 10MB.');
-      setResumeFile(null);
-      return;
-    }
-
-    setFileError('');
-    setResumeFile(file);
+  const toggleOption = (option: string) => {
+    setSelectedOptions(prev => 
+      prev.includes(option)
+        ? prev.filter(item => item !== option)
+        : [...prev, option]
+    );
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!resumeFile) {
-      setFileError('⚠️ Please upload your resume.');
-      return;
-    }
 
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name');
-    const phone = formData.get('phone');
-    const email = formData.get('email');
-
-    // Simulate API call / processing
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
       
-      const message = `Hello, I have applied for Work With Us.\nName: ${name}\nEmail: ${email}\nMobile: ${phone}\nResume: (${resumeFile.name})`;
+      const optionsText = selectedOptions.length > 0 ? selectedOptions.join(', ') : 'None specified';
+      const message = `Hello, I'd like to discuss a project.\n\nName: ${formData.name}\nLooking to edit: ${optionsText}\nMessage: ${formData.message}`;
       // Replace with actual WhatsApp number
       const phoneNumber = "916377033649"; 
       window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
       
       setTimeout(() => {
         setIsSuccess(false);
-        setResumeFile(null);
-      }, 5000);
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+        setFormData({ name: '', message: '' });
+        setSelectedOptions([]);
+      }, 3000);
+    }, 1000);
   };
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden bg-transparent">
       <div className="px-6 md:px-12 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:items-start">
           
           {/* Text Content */}
           <motion.div
@@ -71,13 +66,14 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="sticky top-32"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6 mt-0">
               Let's Create <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">Something Epic</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500 drop-shadow-[0_0_10px_rgba(217,70,239,0.2)] hover:drop-shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-all duration-1000 ease-in-out">Something Epic</span>
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-md">
-              Fill out the form below with your application details. It goes directly to my WhatsApp for an instant response.
+              Tell me about your project below. The details will go straight to my WhatsApp for a quick response so we can get started right away.
             </p>
             
             <div className="flex items-center gap-4 text-sm font-medium">
@@ -98,83 +94,93 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden">
+            <form onSubmit={handleSubmit} className="glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden bg-black/40 backdrop-blur-xl border border-white/5 shadow-[0_0_40px_rgba(217,70,239,0.05)]">
               {isSuccess && (
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="absolute inset-0 z-20 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-8 text-center"
+                  className="absolute inset-0 z-20 bg-[#0B1225]/95 backdrop-blur-md flex flex-col items-center justify-center p-8 text-center"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", bounce: 0.5 }}
+                    className="w-20 h-20 rounded-full bg-fuchsia-500/20 flex items-center justify-center mb-4 border border-fuchsia-500/30 shadow-[0_0_30px_rgba(217,70,239,0.2)]"
                   >
-                    <CheckCircle2 className="w-20 h-20 text-[#25D366] mb-4" />
+                    <CheckCircle2 className="w-10 h-10 text-fuchsia-400" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                  <p className="text-gray-400">Opening WhatsApp securely...</p>
+                  <h3 className="text-3xl font-bold text-white mb-2 tracking-tight">Ready to Roll!</h3>
+                  <p className="text-fuchsia-300/80">Opening WhatsApp securely...</p>
                 </motion.div>
               )}
 
-              <div className="space-y-6 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
-                    <input required name="name" type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Phone Number</label>
-                    <input required name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="+123456789" />
-                  </div>
-                </div>
-
+              <div className="space-y-8 relative z-10">
+                {/* Name */}
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
-                  <input required name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors" placeholder="john@example.com" />
+                  <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-widest text-fuchsia-400/80 mb-3 ml-1">Your Name</label>
+                  <input 
+                    id="name"
+                    required 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    type="text" 
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all placeholder:text-gray-600 focus:shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                    placeholder="E.g. John Doe" 
+                  />
                 </div>
 
+                {/* Edit Options */}
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Upload Resume (PDF only, Max 10MB)</label>
-                  <div className={`relative border-2 border-dashed rounded-xl bg-white/5 transition-all p-6 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden group ${fileError ? 'border-red-500/50 hover:bg-red-500/5' : 'border-white/10 hover:border-[#4DA3FF]/50 hover:bg-white/10'}`}>
-                    <input
-                      type="file"
-                      accept=".pdf"
-                      onChange={handleFileChange}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    />
-                    {!resumeFile ? (
-                      <>
-                        <div className="w-12 h-12 mb-3 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#4DA3FF]/10 transition-all">
-                          <UploadCloud className="w-6 h-6 text-gray-400 group-hover:text-[#4DA3FF]" />
-                        </div>
-                        <p className="text-sm text-gray-300 font-medium mb-1 group-hover:text-[#4DA3FF] transition-colors">Click or drag file to this area to upload</p>
-                        <p className="text-xs text-gray-500">Only PDF files up to 10MB are allowed</p>
-                      </>
-                    ) : (
-                      <>
-                        <div className="w-12 h-12 mb-3 rounded-full bg-[#4DA3FF]/20 flex items-center justify-center">
-                          <FileText className="w-6 h-6 text-[#4DA3FF]" />
-                        </div>
-                        <p className="text-sm font-medium text-white mb-1 truncate max-w-full px-4">{resumeFile.name}</p>
-                        <p className="text-xs text-[#4DA3FF]">{(resumeFile.size / (1024 * 1024)).toFixed(2)} MB • Click to change</p>
-                      </>
-                    )}
+                  <label className="block text-xs font-semibold uppercase tracking-widest text-fuchsia-400/80 mb-3 ml-1">What do you want to edit?</label>
+                  <div className="flex flex-wrap gap-3">
+                    {EDIT_OPTIONS.map((option) => {
+                      const isSelected = selectedOptions.includes(option);
+                      return (
+                        <button
+                          key={option}
+                          type="button"
+                          onClick={() => toggleOption(option)}
+                          className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${
+                            isSelected 
+                              ? 'bg-fuchsia-500/20 border-fuchsia-500/50 text-fuchsia-100 shadow-[0_0_15px_rgba(217,70,239,0.2)]'
+                              : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20'
+                          }`}
+                        >
+                          {option}
+                        </button>
+                      );
+                    })}
                   </div>
-                  {fileError && <p className="mt-2 text-xs text-red-500 font-medium">{fileError}</p>}
                 </div>
 
+                {/* Message Box */}
+                <div>
+                  <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-widest text-fuchsia-400/80 mb-3 ml-1">Project Details</label>
+                  <textarea 
+                    id="message"
+                    required 
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    rows={4}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all resize-none placeholder:text-gray-600 focus:shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                    placeholder="Tell me more about the style, length, or goals of your project..." 
+                  ></textarea>
+                </div>
+
+                {/* Submit */}
                 <button 
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-bold py-4 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white font-bold py-4 rounded-xl hover:opacity-90 hover:shadow-[0_0_25px_rgba(217,70,239,0.4)] transition-all flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed border border-fuchsia-400/50 relative overflow-hidden"
                 >
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                   {isSubmitting ? (
-                    <span className="animate-pulse">Processing...</span>
+                    <span className="animate-pulse relative z-10">Preparing Message...</span>
                   ) : (
-                    <>
-                      Submit Application
+                    <span className="relative z-10 flex items-center gap-2">
+                      Send to WhatsApp
                       <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </>
+                    </span>
                   )}
                 </button>
               </div>

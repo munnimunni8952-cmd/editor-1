@@ -5,7 +5,7 @@ const SKILLS = [
   { 
     name: "ChatGPT", 
     image: "https://i.ibb.co/JWnjkkHP/image.png", 
-    color: "from-teal-400 to-emerald-500", 
+    color: "from-fuchsia-400 to-purple-500", 
     glow: "rgba(16, 163, 127, 0.4)",
     level: 95,
     description: "Advanced prompt engineering, scriptwriting, and rapid AI-assisted ideation."
@@ -45,7 +45,7 @@ const SKILLS = [
   { 
     name: "Social Media Creation", 
     image: "https://i.ibb.co/67kmgqtK/image.png", 
-    color: "from-pink-500 to-purple-600", 
+    color: "from-purple-500 to-fuchsia-500", 
     glow: "rgba(255, 0, 127, 0.4)",
     level: 96,
     description: "Audience retention strategies, viral storytelling, and multi-platform growth."
@@ -67,17 +67,17 @@ const SkillCard: React.FC<{ skill: any; index: number }> = ({ skill, index }) =>
     >
       {/* Background glow that activates on hover */}
       <div 
-        className="absolute -inset-1 rounded-3xl blur-md opacity-0 group-hover:opacity-100 transition duration-500"
+        className="absolute -inset-1 rounded-3xl blur-sm opacity-0 group-hover:opacity-50 transition duration-500"
         style={{ 
           background: skill.glow,
-          boxShadow: `0 0 30px ${skill.glow}`
+          boxShadow: `0 0 15px ${skill.glow}`
         }}
       />
       
       {/* Card Content */}
       <div className="relative h-full bg-black/60 backdrop-blur-xl border border-white/10 group-hover:border-white/20 p-8 rounded-3xl transition-all duration-500 overflow-hidden text-left flex flex-col">
         {/* Subtle Top Gradient Line */}
-        <div className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r ${skill.color} opacity-50 group-hover:opacity-100 transition-opacity`} />
+        <div className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r ${skill.color} opacity-30 group-hover:opacity-80 transition-opacity`} />
         
         <div className="flex items-start justify-between mb-8">
           {/* Logo Container with floating animation */}
@@ -133,10 +133,10 @@ export default function Skills() {
       {/* Cinematic Dark Background with Moving Gradient Lights */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute top-0 right-1/4 w-[50vw] h-[50vw] bg-pink-600/10 blur-[100px] rounded-full mix-blend-screen" 
+          className="absolute top-0 right-1/4 w-[50vw] h-[50vw] bg-fuchsia-600/10 blur-[60px] rounded-full mix-blend-screen" 
         />
         <div 
-          className="absolute bottom-0 left-1/4 w-[40vw] h-[40vw] bg-cyan-600/10 blur-[100px] rounded-full mix-blend-screen" 
+          className="absolute bottom-0 left-1/4 w-[40vw] h-[40vw] bg-purple-600/10 blur-[60px] rounded-full mix-blend-screen" 
         />
       </div>
 
@@ -148,13 +148,13 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/5 text-xs font-medium tracking-wide text-[#4DA3FF] mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4DA3FF] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/5 text-xs font-medium tracking-wide text-fuchsia-400 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-500 animate-pulse" />
             MY EXPERTISE
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight mb-6">
             Arsenal of <br className="md:hidden" />
-            <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Capabilities</span>
+            <span className="bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent">Capabilities</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light">
             Mastery over industry-standard tools combined with cutting-edge AI technologies to deliver fast, stunning, and highly engaging results.

@@ -6,25 +6,25 @@ const SOCIAL_LINKS = [
     name: "Instagram",
     icon: Instagram,
     link: "https://www.instagram.com/trimclipedits?igsh=cmU0N3dudnBjamRv",
-    gradient: "from-purple-500 via-pink-500 to-orange-500",
-    glowColor: "rgba(236, 72, 153, 0.6)",
-    shadowClass: "hover:shadow-[0_0_40px_rgba(236,72,153,0.5)]"
+    gradient: "from-[#833AB4] via-[#FD1D1D] to-[#F56040]",
+    glowColor: "rgba(225, 48, 108, 0.6)",
+    shadowClass: "hover:shadow-[0_0_40px_rgba(225,48,108,0.3)]"
   },
   {
     name: "Facebook",
     icon: Facebook,
-    link: "ADD_MY_FACEBOOK_LINK",
-    gradient: "from-blue-600 to-blue-400",
-    glowColor: "rgba(59, 130, 246, 0.6)",
-    shadowClass: "hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
+    link: "https://www.facebook.com/share/1ELbbACcTR/",
+    gradient: "from-[#1877F2] to-[#0A5BC4]",
+    glowColor: "rgba(24, 119, 242, 0.6)",
+    shadowClass: "hover:shadow-[0_0_40px_rgba(24,119,242,0.3)]"
   },
   {
     name: "YouTube",
     icon: Youtube,
     link: "https://youtube.com/@ankitsharma-e3g8u?si=RzLTYKMDGst_NzOv",
-    gradient: "from-red-600 to-red-400",
-    glowColor: "rgba(239, 68, 68, 0.6)",
-    shadowClass: "hover:shadow-[0_0_40px_rgba(239,68,68,0.5)]"
+    gradient: "from-[#FF0000] to-[#CC0000]",
+    glowColor: "rgba(255, 0, 0, 0.6)",
+    shadowClass: "hover:shadow-[0_0_40px_rgba(255,0,0,0.3)]"
   }
 ];
 
@@ -32,7 +32,7 @@ export default function SocialLinks() {
   return (
     <section id="socials" className="py-24 relative overflow-hidden bg-transparent">
       {/* Cinematic Background Elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-pink-600/5 via-purple-600/5 to-blue-600/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-gradient-to-r from-fuchsia-600/5 via-purple-600/5 to-fuchsia-600/5 blur-[60px] pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-5xl mx-auto relative z-10 text-center">
         <motion.div
@@ -43,7 +43,7 @@ export default function SocialLinks() {
           className="mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight mb-4">
-            Follow Me On <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Social Media</span>
+            Follow Me On <span className="bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent">Social Media</span>
           </h2>
           <p className="text-gray-400 text-lg font-light mb-8">
             Stay updated with my latest cinematic edits, behind-the-scenes content, and premium tutorials.

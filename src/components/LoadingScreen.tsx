@@ -37,7 +37,7 @@ export default function LoadingScreen() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1.2 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] rounded-full blur-[100px] pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] rounded-full blur-[60px] pointer-events-none"
             style={{
               background: "radial-gradient(circle, rgba(167,139,250,0.15) 0%, rgba(255,255,255,0.02) 50%, transparent 100%)",
             }}
