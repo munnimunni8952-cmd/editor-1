@@ -5,7 +5,9 @@ import {
   Target, 
   Wand2, 
   Image as ImageIcon, 
-  Share2 
+  Share2,
+  Crown,
+  CheckCircle2
 } from 'lucide-react';
 import React, { useRef, useState } from 'react';
 
@@ -213,6 +215,92 @@ export default function Services() {
           {services.map((service, index) => (
             <TiltCard key={index} service={service} index={index} />
           ))}
+        </div>
+
+        {/* Graphics Design Section */}
+        <div className="mt-32 max-w-7xl mx-auto px-4 md:px-0">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-2xl mx-auto mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-pulse" />
+              <span className="text-sm font-medium tracking-wide text-neutral-300 uppercase">Visual Identity</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
+              Graphics <span className="bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] bg-clip-text text-transparent">Design</span>
+            </h2>
+            <p className="text-lg text-neutral-400 leading-relaxed">
+              High-end visual branding tailored for visionary creators and modern businesses.
+            </p>
+          </motion.div>
+
+          <div className="flex justify-center items-center w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group w-full max-w-lg rounded-3xl p-[2px] bg-gradient-to-b border-[#4DA3FF]/40 group-hover:border-[#4DA3FF]/80 shadow-[0_0_40px_rgba(77,163,255,0.15)] hover:shadow-[0_0_80px_rgba(77,163,255,0.3)] transition-all duration-500 overflow-hidden"
+              style={{ background: 'linear-gradient(to bottom, rgba(77,163,255,0.3), rgba(77,163,255,0.1))' }}
+            >
+              {/* Premium Glow Effect */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/30 to-purple-500/30 blur-2xl z-0 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="relative h-full z-10 flex flex-col rounded-[22px] bg-[#0A0F1E]/95 backdrop-blur-2xl px-8 py-10 md:px-10 overflow-hidden box-border border-t border-[#4DA3FF]/30">
+                {/* Featured Badge */}
+                <div className="absolute top-0 right-0 left-0 flex justify-center -translate-y-px">
+                  <div className="px-5 py-1.5 rounded-b-xl text-xs font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2 bg-gradient-to-r from-[#4DA3FF] to-[#80BFFF] text-white shadow-[0_0_20px_rgba(77,163,255,0.4)]">
+                    <Crown className="w-4 h-4" />
+                    Premium Service
+                  </div>
+                </div>
+
+                <div className="text-center mt-6 mb-8 relative z-20">
+                  <h3 className="text-3xl font-bold bg-gradient-to-br from-white to-neutral-400 bg-clip-text text-transparent mb-3 group-hover:text-white transition-colors duration-300">
+                    Logo Designing
+                  </h3>
+                  <div className="flex justify-center items-baseline gap-2">
+                    <span className="text-5xl font-extrabold text-[#4DA3FF] drop-shadow-[0_0_15px_rgba(77,163,255,0.3)]">₹4,999</span>
+                    <span className="text-neutral-400 font-medium">/ Project</span>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 rounded-2xl p-6 border border-white/10 mb-8 relative z-20">
+                  <ul className="space-y-4">
+                    {[
+                      "Custom Premium Logo Design",
+                      "Minimalist & Modern Aesthetic",
+                      "Brand Guidelines & Colors",
+                      "Multiple Revisions & Tweaks",
+                      "High-Resolution Vector Files",
+                      "Fast Track Priority Delivery",
+                      "1-on-1 Agency Consultation"
+                    ].map((feature, i) => (
+                      <li key={i} className="flex items-center text-neutral-300 group-hover:text-white transition-colors duration-300">
+                        <CheckCircle2 className="w-5 h-5 text-[#4DA3FF] mr-3 shrink-0 drop-shadow-[0_0_5px_rgba(77,163,255,0.5)]" />
+                        <span className="font-medium text-[15px]">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <button 
+                  onClick={() => window.dispatchEvent(new Event('open-work-modal'))}
+                  className="w-full relative mt-auto z-20 group/btn bg-gradient-to-r from-[#4DA3FF] to-[#6EE7FF] hover:from-[#3b82f6] hover:to-[#5ee0f5] text-black font-bold uppercase tracking-widest py-4 md:py-5 px-6 rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(77,163,255,0.4)] hover:shadow-[0_0_35px_rgba(77,163,255,0.6)] transform hover:-translate-y-1"
+                >
+                  <div className="relative z-10 flex items-center justify-center gap-2">
+                    <span>Book Your Logo</span>
+                    <Wand2 className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

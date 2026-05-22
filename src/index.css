@@ -115,12 +115,7 @@ html, body, #root {
 
 @media (max-width: 768px) {
   .hero-bg-image {
-    background-size: contain;
-    background-position: center top;
-    background-attachment: scroll;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    transform: none;
-    -webkit-backface-visibility: visible;
+    background-image: none;
+    background-color: black;
   }
 }

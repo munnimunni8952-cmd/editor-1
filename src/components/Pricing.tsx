@@ -63,6 +63,29 @@ const CATEGORIES = [
         accentText: "text-gray-300",
         isPremium: true,
         glowColor: "rgba(255, 255, 255, 0.15)",
+      },
+      {
+        id: "reel-elite",
+        title: "Advance Premium Editing",
+        icon: Crown,
+        badge: "Featured / Best Value",
+        price: "3999",
+        priceSuffix: " / Reel",
+        features: [
+          "Cinematic / Elite Editing",
+          "Documentary-style editing",
+          "Viral retention strategy",
+          "Professional color grading",
+          "High-end sound design",
+          "Movie-like feel",
+          "Personal editor support"
+        ],
+        borderClass: "border-[#4DA3FF]/40 group-hover:border-[#4DA3FF]/80",
+        shadowClass: "shadow-[0_0_30px_rgba(77,163,255,0.15)] hover:shadow-[0_0_70px_rgba(77,163,255,0.4)]",
+        btnText: "Get Elite Edit",
+        accentText: "text-[#4DA3FF]",
+        isPopular: true,
+        glowColor: "rgba(77, 163, 255, 0.5)",
       }
     ]
   },
@@ -281,6 +304,29 @@ const CATEGORIES = [
         btnText: "Get Started",
         accentText: "text-gray-300",
         glowColor: "rgba(59, 130, 246, 0.15)",
+      },
+      {
+        id: "gd-logo",
+        title: "Logo Designing",
+        icon: Crown,
+        badge: "Featured / Best Value",
+        price: "4999",
+        priceSuffix: " / Logo",
+        features: [
+          "Custom Premium Logo",
+          "Brand Guidelines included",
+          "High-Resolution Vector Source",
+          "Multiple Revisions",
+          "Premium Agency Quality",
+          "Professional Typography",
+          "Priority Delivery & Support"
+        ],
+        borderClass: "border-[#4DA3FF]/40 group-hover:border-[#4DA3FF]/80",
+        shadowClass: "shadow-[0_0_30px_rgba(77,163,255,0.15)] hover:shadow-[0_0_70px_rgba(77,163,255,0.4)]",
+        btnText: "Get Premium Logo",
+        accentText: "text-[#4DA3FF]",
+        isPopular: true,
+        glowColor: "rgba(77, 163, 255, 0.5)",
       }
     ]
   }

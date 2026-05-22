@@ -1,32 +1,61 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, UploadCloud, FileText } from 'lucide-react';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [fileError, setFileError] = useState('');
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.type !== 'application/pdf') {
+      setFileError('⚠️ Only PDF files are allowed.');
+      setResumeFile(null);
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      setFileError('⚠️ File size must be less than 10MB.');
+      setResumeFile(null);
+      return;
+    }
+
+    setFileError('');
+    setResumeFile(file);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!resumeFile) {
+      setFileError('⚠️ Please upload your resume.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name');
     const phone = formData.get('phone');
     const email = formData.get('email');
-    const project = formData.get('project');
 
     // Simulate API call / processing
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
       
-      const message = `Hello! I want to work with you.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Project Details:* ${project}`;
+      const message = `Hello, I have applied for Work With Us.\nName: ${name}\nEmail: ${email}\nMobile: ${phone}\nResume: (${resumeFile.name})`;
       // Replace with actual WhatsApp number
       const phoneNumber = "916377033649"; 
-      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
       
-      setTimeout(() => setIsSuccess(false), 5000);
+      setTimeout(() => {
+        setIsSuccess(false);
+        setResumeFile(null);
+      }, 5000);
       (e.target as HTMLFormElement).reset();
     }, 1500);
   };
@@ -48,7 +77,7 @@ export default function Contact() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">Something Epic</span>
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-md">
-              Fill out the form below with your project details. It goes directly to my WhatsApp for an instant response.
+              Fill out the form below with your application details. It goes directly to my WhatsApp for an instant response.
             </p>
             
             <div className="flex items-center gap-4 text-sm font-medium">
@@ -106,8 +135,33 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Project Details</label>
-                  <textarea required name="project" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#4DA3FF] transition-colors resize-none" placeholder="Tell me about your vision..."></textarea>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Upload Resume (PDF only, Max 10MB)</label>
+                  <div className={`relative border-2 border-dashed rounded-xl bg-white/5 transition-all p-6 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden group ${fileError ? 'border-red-500/50 hover:bg-red-500/5' : 'border-white/10 hover:border-[#4DA3FF]/50 hover:bg-white/10'}`}>
+                    <input
+                      type="file"
+                      accept=".pdf"
+                      onChange={handleFileChange}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    />
+                    {!resumeFile ? (
+                      <>
+                        <div className="w-12 h-12 mb-3 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#4DA3FF]/10 transition-all">
+                          <UploadCloud className="w-6 h-6 text-gray-400 group-hover:text-[#4DA3FF]" />
+                        </div>
+                        <p className="text-sm text-gray-300 font-medium mb-1 group-hover:text-[#4DA3FF] transition-colors">Click or drag file to this area to upload</p>
+                        <p className="text-xs text-gray-500">Only PDF files up to 10MB are allowed</p>
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-12 h-12 mb-3 rounded-full bg-[#4DA3FF]/20 flex items-center justify-center">
+                          <FileText className="w-6 h-6 text-[#4DA3FF]" />
+                        </div>
+                        <p className="text-sm font-medium text-white mb-1 truncate max-w-full px-4">{resumeFile.name}</p>
+                        <p className="text-xs text-[#4DA3FF]">{(resumeFile.size / (1024 * 1024)).toFixed(2)} MB • Click to change</p>
+                      </>
+                    )}
+                  </div>
+                  {fileError && <p className="mt-2 text-xs text-red-500 font-medium">{fileError}</p>}
                 </div>
 
                 <button 
@@ -118,7 +172,7 @@ export default function Contact() {
                     <span className="animate-pulse">Processing...</span>
                   ) : (
                     <>
-                      Send to WhatsApp
+                      Submit Application
                       <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </>
                   )}
