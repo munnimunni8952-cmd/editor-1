@@ -10,6 +10,7 @@ export default function JoinTeamModal() {
   });
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -22,6 +23,7 @@ export default function JoinTeamModal() {
       setFormData({ name: '', portfolio: '' });
       setResumeFile(null);
       setFileError("");
+      setNameError("");
     };
     window.addEventListener('open-join-team-modal', handleOpen);
     return () => window.removeEventListener('open-join-team-modal', handleOpen);
@@ -58,39 +60,43 @@ export default function JoinTeamModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.portfolio || !resumeFile) {
-      setFileError(!resumeFile ? "Resume is required" : "");
+    if (!formData.name.trim()) {
+      setNameError("Name is required to continue.");
       return;
     }
+    setNameError("");
 
     setIsSubmitting(true);
     setFileError("");
 
     try {
-      // 1. Upload to tmpfiles.org
-      const uploadData = new FormData();
-      uploadData.append('file', resumeFile);
+      let directUrl = 'Not provided';
+      if (resumeFile) {
+        // 1. Upload to tmpfiles.org
+        const uploadData = new FormData();
+        uploadData.append('file', resumeFile);
 
-      const response = await fetch('https://tmpfiles.org/api/v1/upload', {
-        method: 'POST',
-        body: uploadData,
-      });
+        const response = await fetch('https://tmpfiles.org/api/v1/upload', {
+          method: 'POST',
+          body: uploadData,
+        });
 
-      if (!response.ok) {
-        throw new Error("Failed to upload file");
+        if (!response.ok) {
+          throw new Error("Failed to upload file");
+        }
+
+        const result = await response.json();
+        const rawUrl = result.data.url; // e.g. https://tmpfiles.org/12345/resume.pdf
+        
+        // Convert to direct download link
+        directUrl = rawUrl.replace('tmpfiles.org/', 'tmpfiles.org/dl/');
       }
-
-      const result = await response.json();
-      const rawUrl = result.data.url; // e.g. https://tmpfiles.org/12345/resume.pdf
-      
-      // Convert to direct download link
-      const directUrl = rawUrl.replace('tmpfiles.org/', 'tmpfiles.org/dl/');
 
       // 2. Show success confirmation
       setIsSuccess(true);
 
       // 3. Prepare WhatsApp message
-      const message = `Hello, I want to join the creative team!\n\nName: ${formData.name}\nPortfolio: ${formData.portfolio}\nResume PDF: ${directUrl}`;
+      const message = `Hello, I want to join the creative team!\n\nName: ${formData.name}\nPortfolio: ${formData.portfolio || 'Not provided'}\nResume PDF: ${directUrl}`;
       const whatsappUrl = `https://wa.me/916377033649?text=${encodeURIComponent(message)}`;
 
       // Delay slightly so the user sees the success state
@@ -158,7 +164,7 @@ export default function JoinTeamModal() {
                   >
                     <UploadCloud className="w-8 h-8 text-fuchsia-400" />
                   </motion.div>
-                  <h4 className="text-xl font-bold text-white mb-2">Resume Uploaded!</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Application Ready!</h4>
                   <p className="text-gray-400 text-sm">Redirecting to WhatsApp...</p>
                 </motion.div>
               )}
@@ -171,11 +177,14 @@ export default function JoinTeamModal() {
                   type="text"
                   id="name"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]"
+                  onChange={(e) => {
+                    setFormData({ ...formData, name: e.target.value });
+                    if (e.target.value.trim()) setNameError("");
+                  }}
+                  className={`w-full rounded-xl border ${nameError ? 'border-red-500/50' : 'border-white/10'} bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]`}
                   placeholder="John Doe"
-                  required
                 />
+                {nameError && <p className="text-red-400 text-xs mt-2 animate-pulse">{nameError}</p>}
               </div>
 
               <div>
@@ -189,7 +198,6 @@ export default function JoinTeamModal() {
                   onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
                   className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]"
                   placeholder="https://yourportfolio.com"
-                  required
                 />
               </div>
 
@@ -208,7 +216,6 @@ export default function JoinTeamModal() {
                     onChange={handleFileChange}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                     title="Upload Resume (PDF Only)"
-                    required={!resumeFile}
                   />
                   
                   {resumeFile ? (

@@ -17,6 +17,7 @@ const EDITING_OPTIONS = [
 
 export default function WorkModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [nameError, setNameError] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     services: [] as string[],
@@ -27,6 +28,7 @@ export default function WorkModal() {
     const handleOpen = (e: Event) => {
       e.preventDefault();
       setIsOpen(true);
+      setNameError("");
     };
     window.addEventListener('open-work-modal', handleOpen);
     return () => window.removeEventListener('open-work-modal', handleOpen);
@@ -43,11 +45,14 @@ export default function WorkModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || formData.services.length === 0) {
+    if (!formData.name.trim()) {
+      setNameError("Name is required to continue.");
       return;
     }
+    setNameError("");
 
-    const message = `Hello, I want to discuss a project.\nName: ${formData.name}\nServices Needed: ${formData.services.join(', ')}\nMessage: ${formData.message || 'N/A'}`;
+    const servicesText = formData.services.length > 0 ? formData.services.join(', ') : 'None specified';
+    const message = `Hello, I want to discuss a project.\nName: ${formData.name}\nServices Needed: ${servicesText}\nMessage: ${formData.message || 'N/A'}`;
     
     const whatsappUrl = `https://wa.me/916377033649?text=${encodeURIComponent(message)}`;
     
@@ -101,11 +106,14 @@ export default function WorkModal() {
                   type="text"
                   id="name"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]"
+                  onChange={(e) => {
+                    setFormData({ ...formData, name: e.target.value });
+                    if (e.target.value.trim()) setNameError("");
+                  }}
+                  className={`w-full rounded-xl border ${nameError ? 'border-red-500/50' : 'border-white/10'} bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]`}
                   placeholder="John Doe"
-                  required
                 />
+                {nameError && <p className="text-red-400 text-xs mt-2 animate-pulse">{nameError}</p>}
               </div>
 
               <div>

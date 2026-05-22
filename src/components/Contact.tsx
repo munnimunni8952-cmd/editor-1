@@ -18,6 +18,7 @@ const EDIT_OPTIONS = [
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [nameError, setNameError] = useState("");
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: '',
@@ -34,6 +35,11 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formData.name.trim()) {
+      setNameError("Name is required to continue.");
+      return;
+    }
+    setNameError("");
 
     setIsSubmitting(true);
 
@@ -42,7 +48,7 @@ export default function Contact() {
       setIsSuccess(true);
       
       const optionsText = selectedOptions.length > 0 ? selectedOptions.join(', ') : 'None specified';
-      const message = `Hello, I'd like to discuss a project.\n\nName: ${formData.name}\nLooking to edit: ${optionsText}\nMessage: ${formData.message}`;
+      const message = `Hello, I'd like to discuss a project.\n\nName: ${formData.name}\nLooking to edit: ${optionsText}\nMessage: ${formData.message || 'Not provided'}`;
       // Replace with actual WhatsApp number
       const phoneNumber = "916377033649"; 
       window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
@@ -120,13 +126,16 @@ export default function Contact() {
                   <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-widest text-fuchsia-400/80 mb-3 ml-1">Your Name</label>
                   <input 
                     id="name"
-                    required 
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => {
+                      setFormData({...formData, name: e.target.value});
+                      if (e.target.value.trim()) setNameError("");
+                    }}
                     type="text" 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all placeholder:text-gray-600 focus:shadow-[0_0_15px_rgba(217,70,239,0.15)]" 
+                    className={`w-full bg-white/5 border ${nameError ? 'border-red-500/50' : 'border-white/10'} rounded-xl px-5 py-4 text-white focus:outline-none focus:border-fuchsia-500/50 focus:bg-white/10 transition-all placeholder:text-gray-600 focus:shadow-[0_0_15px_rgba(217,70,239,0.15)]`} 
                     placeholder="E.g. John Doe" 
                   />
+                  {nameError && <p className="text-red-400 text-xs mt-2 ml-1 animate-pulse">{nameError}</p>}
                 </div>
 
                 {/* Edit Options */}
@@ -158,7 +167,6 @@ export default function Contact() {
                   <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-widest text-fuchsia-400/80 mb-3 ml-1">Project Details</label>
                   <textarea 
                     id="message"
-                    required 
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={4}
