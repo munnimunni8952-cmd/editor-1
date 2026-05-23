@@ -29,7 +29,7 @@ const SOCIAL_LINKS = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    link: "#",
+    link: "https://www.linkedin.com/in/trimclipedits-video-editing-services-4771713a1?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     gradient: "from-[#0077B5] to-[#005E93]",
     glowColor: "rgba(0, 119, 181, 0.6)",
     shadowClass: "hover:shadow-[0_0_30px_rgba(0,119,181,0.3)]"

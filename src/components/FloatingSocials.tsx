@@ -19,7 +19,7 @@ export default function FloatingSocials() {
         <a href="https://youtube.com/@ankitsharma-e3g8u?si=RzLTYKMDGst_NzOv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-[#FF0000] hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] transition-all hover:scale-110 capitalize">
           <Youtube className="w-5 h-5" />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-[#0077B5] hover:shadow-[0_0_15px_rgba(0,119,181,0.5)] transition-all hover:scale-110 capitalize">
+        <a href="https://www.linkedin.com/in/trimclipedits-video-editing-services-4771713a1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-[#0077B5] hover:shadow-[0_0_15px_rgba(0,119,181,0.5)] transition-all hover:scale-110 capitalize">
           <Linkedin className="w-5 h-5" />
         </a>
       </div>

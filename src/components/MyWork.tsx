@@ -90,7 +90,7 @@ export default function MyWork() {
           className="flex flex-col items-center text-center relative z-10"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
-            My work{" "}
+            Our Work{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">
               Reels
             </span>
