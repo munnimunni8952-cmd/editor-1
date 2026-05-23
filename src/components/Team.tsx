@@ -47,6 +47,11 @@ const teamMembers = [
     name: "Manish Saini",
     role: "Motion Graphic Designer",
     image: "https://i.ibb.co/j9x13hFS/Whats-App-Image-2026-05-21-at-1-20-21-PM-1.jpg"
+  },
+  {
+    name: "You Can Be Next",
+    role: "Coming Soon",
+    image: ""
   }
 ];
 
@@ -95,13 +100,15 @@ const TeamCard: React.FC<{ member: typeof teamMembers[0], index: number }> = ({ 
         <div className="relative z-10 flex flex-col h-full bg-gradient-to-b from-transparent to-[#050816]/90 backdrop-blur-md p-6 lg:p-8">
           
           {/* Circular Image Container */}
-          <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 group-hover:border-sky-400/50 transition-colors duration-500 shadow-xl shadow-black/50">
+          <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 group-hover:border-sky-400/50 transition-colors duration-500 shadow-xl shadow-black/50 bg-white/5">
             <div className="absolute inset-0 bg-sky-900/20 group-hover:bg-transparent transition-colors duration-500 z-10 mix-blend-overlay" />
-            <img 
-              src={member.image} 
-              alt={member.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-            />
+            {member.image ? (
+              <img 
+                src={member.image} 
+                alt={member.name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+              />
+            ) : null}
             {/* Glow ring on hover */}
             <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(56,189,248,0)] group-hover:shadow-[inset_0_0_20px_rgba(56,189,248,0.5)] transition-shadow duration-500 z-20 pointer-events-none" />
           </div>
