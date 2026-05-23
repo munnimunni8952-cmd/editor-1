@@ -51,7 +51,7 @@ export default function PhotoSlider() {
   return (
     <section id="studio" className="py-24 relative overflow-hidden bg-transparent">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-fuchsia-600/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-sky-600/10 blur-[80px] rounded-full pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-7xl mx-auto">
         <motion.div
@@ -61,10 +61,10 @@ export default function PhotoSlider() {
            transition={{ duration: 0.8 }}
            className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-fuchsia-600">Studio</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white capitalize">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">Studio</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm md:text-base font-light max-w-2xl mx-auto">
             A glimpse into our creative environment and the process behind the magic.
           </p>
         </motion.div>
@@ -77,10 +77,10 @@ export default function PhotoSlider() {
           className="relative max-w-5xl mx-auto group"
         >
           {/* Main Slider Box */}
-          <div className="bg-[#0B1225]/65 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-white/10 shadow-[0_0_50px_rgba(217,70,239,0.15)] hover:shadow-[0_0_80px_rgba(217,70,239,0.25)] hover:border-fuchsia-500/40 transition-all duration-700 overflow-hidden relative">
+          <div className="bg-[#0B1225]/65 backdrop-blur-2xl rounded-3xl p-4 md:p-6 border border-white/10 shadow-[0_0_50px_rgba(56,189,248,0.15)] hover:shadow-[0_0_80px_rgba(56,189,248,0.25)] hover:border-sky-500/40 transition-all duration-700 overflow-hidden relative">
             
             {/* Ambient inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <div className="overflow-hidden rounded-2xl relative" ref={emblaRef}>
               <div className="flex touch-pan-y">
@@ -106,7 +106,7 @@ export default function PhotoSlider() {
             <div className="absolute top-1/2 -translate-y-1/2 left-8 z-20 hidden md:block">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-fuchsia-600/40 hover:border-fuchsia-500/50 hover:shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-sky-600/40 hover:border-sky-500/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 capitalize"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -115,7 +115,7 @@ export default function PhotoSlider() {
             <div className="absolute top-1/2 -translate-y-1/2 right-8 z-20 hidden md:block">
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-fuchsia-600/40 hover:border-fuchsia-500/50 hover:shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white/70 hover:text-white hover:bg-sky-600/40 hover:border-sky-500/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-300 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 capitalize"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -131,7 +131,7 @@ export default function PhotoSlider() {
                 onClick={() => scrollTo(index)}
                 className={`transition-all duration-500 rounded-full ${
                   index === selectedIndex
-                    ? 'w-10 h-2 bg-fuchsia-500 shadow-[0_0_10px_rgba(217,70,239,0.8)]'
+                    ? 'w-10 h-2 bg-sky-500 shadow-[0_0_10px_rgba(56,189,248,0.8)]'
                     : 'w-2 h-2 bg-white/20 hover:bg-white/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

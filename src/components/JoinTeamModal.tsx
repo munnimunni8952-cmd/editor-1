@@ -97,7 +97,10 @@ export default function JoinTeamModal() {
 
       // 3. Prepare WhatsApp message
       const message = `Hello, I want to join the creative team!\n\nName: ${formData.name}\nPortfolio: ${formData.portfolio || 'Not provided'}\nResume PDF: ${directUrl}`;
-      const whatsappUrl = `https://wa.me/916377033649?text=${encodeURIComponent(message)}`;
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const whatsappUrl = isMobile 
+        ? `whatsapp://send?phone=916377033649&text=${encodeURIComponent(message)}` 
+        : `https://api.whatsapp.com/send?phone=916377033649&text=${encodeURIComponent(message)}`;
 
       // Delay slightly so the user sees the success state
       setTimeout(() => {
@@ -130,10 +133,10 @@ export default function JoinTeamModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden hide-scrollbar rounded-[24px] border border-white/10 bg-[#0B1225]/80 p-8 shadow-[0_0_50px_rgba(217,70,239,0.15)] backdrop-blur-2xl"
+            className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden hide-scrollbar rounded-[24px] border border-white/10 bg-[#0B1225]/80 p-8 shadow-[0_0_50px_rgba(56,189,248,0.15)] backdrop-blur-2xl"
           >
             {/* Top Glow Accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[1px] bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
             
             <button
               onClick={() => setIsOpen(false)}
@@ -143,8 +146,8 @@ export default function JoinTeamModal() {
             </button>
 
             <div className="mb-8">
-              <h3 className="mb-2 text-3xl font-display font-bold tracking-tight text-white flex items-center gap-2">
-                Work With Us <span className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse shadow-[0_0_10px_rgba(217,70,239,0.4)]"></span>
+              <h3 className="mb-2 text-3xl font-display font-bold tracking-tight text-white flex items-center gap-2 capitalize">
+                Work With Us <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.4)]"></span>
               </h3>
               <p className="text-sm md:text-base text-gray-400 font-light">Join our premium cinematic design and development team.</p>
             </div>
@@ -160,17 +163,17 @@ export default function JoinTeamModal() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", bounce: 0.5 }}
-                    className="w-16 h-16 rounded-full bg-fuchsia-500/20 flex items-center justify-center mb-4 border border-fuchsia-500/50"
+                    className="w-16 h-16 rounded-full bg-sky-500/20 flex items-center justify-center mb-4 border border-sky-500/50"
                   >
-                    <UploadCloud className="w-8 h-8 text-fuchsia-400" />
+                    <UploadCloud className="w-8 h-8 text-sky-400" />
                   </motion.div>
-                  <h4 className="text-xl font-bold text-white mb-2">Application Ready!</h4>
+                  <h4 className="text-xl font-bold text-white mb-2 capitalize">Application Ready!</h4>
                   <p className="text-gray-400 text-sm">Redirecting to WhatsApp...</p>
                 </motion.div>
               )}
 
               <div>
-                <label htmlFor="name" className="mb-2 block text-xs font-semibold uppercase tracking-widest text-fuchsia-400">
+                <label htmlFor="name" className="mb-2 block text-xs font-semibold capitalize tracking-widest text-sky-400">
                   Full Name
                 </label>
                 <input
@@ -181,14 +184,14 @@ export default function JoinTeamModal() {
                     setFormData({ ...formData, name: e.target.value });
                     if (e.target.value.trim()) setNameError("");
                   }}
-                  className={`w-full rounded-xl border ${nameError ? 'border-red-500/50' : 'border-white/10'} bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]`}
+                  className={`w-full rounded-xl border ${nameError ? 'border-red-500/50' : 'border-white/10'} bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-sky-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(56,189,248,0.2)]`}
                   placeholder="John Doe"
                 />
                 {nameError && <p className="text-red-400 text-xs mt-2 animate-pulse">{nameError}</p>}
               </div>
 
               <div>
-                <label htmlFor="portfolio" className="mb-2 block text-xs font-semibold uppercase tracking-widest text-fuchsia-400">
+                <label htmlFor="portfolio" className="mb-2 block text-xs font-semibold capitalize tracking-widest text-sky-400">
                   Portfolio Link
                 </label>
                 <input
@@ -196,19 +199,19 @@ export default function JoinTeamModal() {
                   id="portfolio"
                   value={formData.portfolio}
                   onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
-                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-fuchsia-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(217,70,239,0.2)]"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3.5 text-white placeholder-gray-600 outline-none transition-all focus:border-sky-500/50 focus:bg-[#0B1225] focus:shadow-[0_0_10px_rgba(56,189,248,0.2)]"
                   placeholder="https://yourportfolio.com"
                 />
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-fuchsia-400">
+                <label className="mb-2 block text-xs font-semibold capitalize tracking-widest text-sky-400">
                   Resume (PDF Only)
                 </label>
                 <div 
                   onDrop={handleDrop}
                   onDragOver={handleDragOver}
-                  className={`relative border-2 border-dashed rounded-xl bg-black/40 px-4 py-6 flex flex-col items-center justify-center text-center overflow-hidden group transition-all cursor-pointer ${fileError ? 'border-red-500/50 hover:bg-red-500/5' : 'border-white/10 hover:border-fuchsia-500/50 hover:bg-white/5'} focus-within:border-fuchsia-500/50 focus-within:shadow-[0_0_10px_rgba(217,70,239,0.2)]`}
+                  className={`relative border-2 border-dashed rounded-xl bg-black/40 px-4 py-6 flex flex-col items-center justify-center text-center overflow-hidden group transition-all cursor-pointer ${fileError ? 'border-red-500/50 hover:bg-red-500/5' : 'border-white/10 hover:border-sky-500/50 hover:bg-white/5'} focus-within:border-sky-500/50 focus-within:shadow-[0_0_10px_rgba(56,189,248,0.2)]`}
                 >
                   <input 
                     type="file" 
@@ -220,18 +223,18 @@ export default function JoinTeamModal() {
                   
                   {resumeFile ? (
                     <div className="flex flex-col items-center justify-center relative z-10 pointer-events-none">
-                      <div className="w-12 h-12 mb-3 rounded-full bg-fuchsia-500/20 flex items-center justify-center">
-                        <FileText className="w-6 h-6 text-fuchsia-500" />
+                      <div className="w-12 h-12 mb-3 rounded-full bg-sky-500/20 flex items-center justify-center">
+                        <FileText className="w-6 h-6 text-sky-500" />
                       </div>
-                      <p className="text-sm text-fuchsia-300 font-medium truncate w-[200px] sm:w-[250px]">{resumeFile.name}</p>
-                      <p className="text-xs text-fuchsia-400 mt-1">{(resumeFile.size / (1024 * 1024)).toFixed(2)} MB • Click to change</p>
+                      <p className="text-sm text-sky-300 font-medium truncate w-[200px] sm:w-[250px]">{resumeFile.name}</p>
+                      <p className="text-xs text-sky-400 mt-1">{(resumeFile.size / (1024 * 1024)).toFixed(2)} MB • Click to change</p>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center relative z-10 pointer-events-none">
-                      <div className="w-12 h-12 mb-3 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-fuchsia-500/10 transition-all">
-                        <UploadCloud className="w-6 h-6 text-gray-400 group-hover:text-fuchsia-500" />
+                      <div className="w-12 h-12 mb-3 rounded-full bg-white/5 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-500/10 transition-all">
+                        <UploadCloud className="w-6 h-6 text-gray-400 group-hover:text-sky-500" />
                       </div>
-                      <p className="text-sm text-gray-300 font-medium mb-1 group-hover:text-fuchsia-400 transition-colors">Click or drag PDF to upload</p>
+                      <p className="text-sm text-gray-300 font-medium mb-1 group-hover:text-sky-400 transition-colors">Click or drag PDF to upload</p>
                     </div>
                   )}
                 </div>
@@ -241,7 +244,7 @@ export default function JoinTeamModal() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-fuchsia-500 to-purple-600 px-4 py-4 text-[15px] font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(217,70,239,0.3)] border border-fuchsia-400/50 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-cyan-600 px-4 py-4 text-[15px] font-bold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(56,189,248,0.3)] border border-sky-400/50 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed capitalize"
               >
                 {isSubmitting ? (
                   <span className="animate-pulse">Uploading Resume...</span>

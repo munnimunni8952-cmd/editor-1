@@ -8,32 +8,32 @@ const statsData = [
     value: 2000, 
     suffix: "+", 
     icon: Video, 
-    color: "from-fuchsia-400 to-purple-500",
-    shadow: "group-hover:shadow-[#d946ef]/20"
+    color: "from-sky-400 to-cyan-500",
+    shadow: "group-hover:shadow-[#38bdf8]/20"
   },
   { 
     label: "VIEWS", 
     value: 20, 
     suffix: "M+", 
     icon: Eye, 
-    color: "from-purple-400 to-fuchsia-400",
-    shadow: "group-hover:shadow-purple-500/20"
+    color: "from-cyan-400 to-sky-400",
+    shadow: "group-hover:shadow-cyan-500/20"
   },
   { 
     label: "Clients", 
     value: 500, 
     suffix: "+", 
     icon: Users, 
-    color: "from-fuchsia-500 to-purple-600",
-    shadow: "group-hover:shadow-fuchsia-500/20"
+    color: "from-sky-500 to-cyan-600",
+    shadow: "group-hover:shadow-sky-500/20"
   },
   { 
     label: "Delivery", 
     value: 24, 
     suffix: " HR", 
     icon: Clock, 
-    color: "from-purple-500 to-fuchsia-500",
-    shadow: "group-hover:shadow-purple-500/20"
+    color: "from-cyan-500 to-sky-500",
+    shadow: "group-hover:shadow-cyan-500/20"
   },
 ];
 
@@ -108,7 +108,7 @@ export default function Stats() {
                   <Counter value={stat.value} suffix={stat.suffix} />
                   
                   {/* Label */}
-                  <div className="text-sm md:text-base text-neutral-400 font-medium tracking-wide uppercase">
+                  <div className="text-sm md:text-base text-neutral-400 font-medium tracking-wide capitalize">
                     {stat.label}
                   </div>
                 </div>

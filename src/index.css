@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-cyan: #00f3ff;
-  --color-neon-purple: #b92b27; /* We'll use a cinematic red/orange tone or purple, let's use purple/pink */
-  --color-neon-pink: #ff007f;
+  --color-neon-blue: #34bdeb;
   --color-dark-bg: #030303;
   --color-dark-surface: #0a0a0a;
   
@@ -48,16 +46,16 @@ html, body, #root {
 .neon-border {
   border: 1px solid transparent;
   background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-              linear-gradient(to right, #00f3ff, #ff007f) border-box;
+              linear-gradient(to right, #34bdeb, #38bdf8) border-box;
 }
 
 .neon-text {
-  text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  text-shadow: 0 0 20px rgba(52, 189, 235, 0.5);
 }
 
 @keyframes card-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(236, 72, 153, 0.2); }
-  50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(236, 72, 153, 0.5); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(52, 189, 235, 0.2); }
+  50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(52, 189, 235, 0.4); }
 }
 
 .animate-card-pulse {
@@ -80,12 +78,12 @@ html, body, #root {
 }
 
 .logo-glow {
-  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
+  filter: drop-shadow(0 0 15px rgba(52, 189, 235, 0.4));
   transition: filter 0.3s ease;
 }
 
 .logo-glow:hover {
-  filter: drop-shadow(0 0 25px rgba(255, 0, 127, 0.6));
+  filter: drop-shadow(0 0 25px rgba(52, 189, 235, 0.8));
 }
 
 .hide-scrollbar::-webkit-scrollbar {

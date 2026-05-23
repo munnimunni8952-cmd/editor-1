@@ -39,7 +39,7 @@ export default function LoadingScreen() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] rounded-full blur-[60px] pointer-events-none"
             style={{
-              background: "radial-gradient(circle, rgba(167,139,250,0.15) 0%, rgba(255,255,255,0.02) 50%, transparent 100%)",
+              background: "radial-gradient(circle, rgba(34,211,238,0.15) 0%, rgba(255,255,255,0.02) 50%, transparent 100%)",
             }}
           />
 
@@ -51,7 +51,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.8, delay: 0.1, ease: "circOut" }}
               className="h-[1px] bg-white/40 mb-6"
               style={{
-                boxShadow: "0 0 30px rgba(167,139,250,0.18), 0 0 80px rgba(255,255,255,0.05)"
+                boxShadow: "0 0 30px rgba(34,211,238,0.18), 0 0 80px rgba(255,255,255,0.05)"
               }}
             />
 
@@ -63,7 +63,7 @@ export default function LoadingScreen() {
               className="relative overflow-hidden py-4 px-2"
               style={{ willChange: "transform, filter, opacity" }}
             >
-              <h1 className="text-white font-display text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-[0.3em] text-center"
+              <h1 className="text-white font-display text-2xl md:text-4xl lg:text-5xl font-bold capitalize tracking-[0.3em] text-center"
                   style={{
                     textShadow: "0 0 30px rgba(255,255,255,0.3)"
                   }}>
@@ -89,7 +89,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.6, delay: 0, ease: "easeInOut" }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-[150vh] bg-white glow-line pointer-events-none"
               style={{
-                boxShadow: "0 0 20px #fff, 0 0 40px #a78bfa"
+                boxShadow: "0 0 20px #fff, 0 0 40px #38bdf8"
               }}
             />
           </div>

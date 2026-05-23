@@ -32,19 +32,19 @@ export default function MapSection() {
       </div>
 
       <div className="absolute bottom-12 left-6 md:left-12 max-w-[320px] glass-card p-6 rounded-2xl pointer-events-auto border border-white/5 backdrop-blur-lg shadow-2xl">
-        <h3 className="text-xl font-display font-bold mb-2 tracking-wide">Studio Location</h3>
+        <h3 className="text-xl font-display font-bold mb-2 tracking-wide capitalize">Studio Location</h3>
         <p className="text-gray-400 text-sm mb-5 leading-relaxed">
           Available for worldwide remote projects.
         </p>
         <div className="text-white text-sm font-medium flex items-center gap-2 mb-6">
-          <MapPin className="w-4 h-4 text-fuchsia-400" /> 
+          <MapPin className="w-4 h-4 text-sky-400" /> 
           <span className="font-mono text-xs opacity-80">26°58'35.4"N 75°43'36.7"E</span>
         </div>
         <a 
           href="https://www.google.com/maps?q=26.976500,75.726861"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-fuchsia-500 hover:text-black hover:shadow-[0_0_15px_rgba(217,70,239,0.3)] transition-all duration-300"
+          className="inline-flex items-center justify-center w-full py-3 bg-white text-black text-sm font-semibold rounded-lg hover:bg-sky-500 hover:text-black hover:shadow-[0_0_15px_rgba(56,189,248,0.3)] transition-all duration-300 capitalize"
         >
           Open Location
         </a>

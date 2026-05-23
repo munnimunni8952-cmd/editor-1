@@ -23,7 +23,7 @@ const MobileMenuLink = ({ href, onClick, children, index }: { href: string; onCl
     exit="exit"
     className="group relative flex items-center px-5 py-4 rounded-2xl text-xl font-display font-medium text-[#A1A1AA] transition-all duration-300 hover:text-[#FFFFFF] hover:bg-white/[0.04] hover:translate-x-1"
   >
-    <div className="absolute inset-0 bg-fuchsia-500/0 group-hover:bg-fuchsia-500/10 blur-xl transition-all duration-300 rounded-2xl -z-10 pointer-events-none" />
+    <div className="absolute inset-0 bg-sky-500/0 group-hover:bg-sky-500/10 blur-xl transition-all duration-300 rounded-2xl -z-10 pointer-events-none" />
     {children}
   </motion.a>
 );
@@ -63,34 +63,34 @@ export default function Navbar() {
           y: isScrolled ? 0 : -100 
         }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-black/80 backdrop-blur-md border-b border-purple-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-black/80 backdrop-blur-md border-b border-cyan-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
       >
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-3 group capitalize">
           <img 
             src="https://i.ibb.co/xKcXKtdx/image.png" 
             alt="Brand Logo" 
             className="h-10 w-auto object-contain animate-float-logo logo-glow"
           />
-          <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-fuchsia-400 group-hover:to-purple-500 transition-all duration-300">
+          <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:to-cyan-500 transition-all duration-300">
             Studio
           </span>
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-1 flex-wrap items-center justify-center gap-6 text-sm font-medium text-gray-300">
-          <a href="#" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Home</a>
-          <a href="#services" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Services</a>
-          <a href="#work" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Portfolio</a>
-          <a href="#team" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Team</a>
-          <a href="#reviews" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Testimonials</a>
-          <a href="#pricing" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Pricing</a>
-          <a href="tel:+916377033649" className="hover:text-fuchsia-400 hover:shadow-[0_0_10px_rgba(217,70,239,0.3)] transition-all">Contact</a>
+          <a href="#" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Home</a>
+          <a href="#services" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Services</a>
+          <a href="#work" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Portfolio</a>
+          <a href="#team" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Team</a>
+          <a href="#reviews" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Testimonials</a>
+          <a href="#pricing" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Pricing</a>
+          <a href="tel:+916377033649" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Contact</a>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
           <a 
             href="tel:+916377033649"
-            className="text-sm font-bold uppercase tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-fuchsia-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(217,70,239,0.18)]"
+            className="text-sm font-bold capitalize tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-sky-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(56,189,248,0.18)]"
           >
             Contact Us
           </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <button 
           onClick={toggleMenu}
-          className="md:hidden text-white p-2 focus:outline-none"
+          className="md:hidden text-white p-2 focus:outline-none capitalize"
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -135,10 +135,10 @@ export default function Navbar() {
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
-                <span className="font-display font-medium text-xs tracking-widest text-[#A1A1AA] uppercase">Menu</span>
+                <span className="font-display font-medium text-xs tracking-widest text-[#A1A1AA] capitalize">Menu</span>
                 <button 
                   onClick={toggleMenu}
-                  className="text-[#A1A1AA] hover:text-white p-2 rounded-full hover:bg-white/[0.04] transition-colors focus:outline-none"
+                  className="text-[#A1A1AA] hover:text-white p-2 rounded-full hover:bg-white/[0.04] transition-colors focus:outline-none capitalize"
                   aria-label="Close Menu"
                 >
                   <X size={24} />
@@ -161,7 +161,7 @@ export default function Navbar() {
                 <a 
                   href="tel:+916377033649"
                   onClick={toggleMenu}
-                  className="block w-full text-center text-sm font-bold uppercase tracking-wider px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/10 hover:border-fuchsia-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(217,70,239,0.18)]"
+                  className="block w-full text-center text-sm font-bold capitalize tracking-wider px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/10 hover:border-sky-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(56,189,248,0.18)]"
                 >
                   Contact Us
                 </a>

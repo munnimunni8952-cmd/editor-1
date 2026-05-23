@@ -71,7 +71,7 @@ export default function ClientVideos() {
   return (
     <section id="reviews" className="py-20 md:py-24 relative overflow-hidden bg-transparent">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-fuchsia-600/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-full bg-sky-600/10 blur-[80px] rounded-full pointer-events-none" />
 
       <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16 relative z-40 text-center">
         <motion.div
@@ -88,7 +88,7 @@ export default function ClientVideos() {
               opacity: [0.3, 0.6, 0.3],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -left-10 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-[40px] pointer-events-none"
+            className="absolute -top-10 -left-10 w-32 h-32 bg-sky-500/20 rounded-full blur-[40px] pointer-events-none"
           />
           <motion.div
             animate={{
@@ -101,21 +101,21 @@ export default function ClientVideos() {
               ease: "easeInOut",
               delay: 1,
             }}
-            className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-[40px] pointer-events-none"
+            className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-[40px] pointer-events-none"
           />
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white drop-shadow-lg relative z-10">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-400">
-              Reviews
+          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white drop-shadow-lg relative z-10 capitalize">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-400">
+              Testimonials
             </span>
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-fuchsia-500 to-transparent rounded-full"
+              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-sky-500 to-transparent rounded-full"
             />
           </h2>
-          <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto relative z-10 mt-6">
+          <p className="text-gray-400 text-sm md:text-base font-light max-w-2xl mx-auto relative z-10 mt-6">
             Watch Real Client Feedback & Experiences
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ export default function ClientVideos() {
         {/* Navigation Arrows */}
         <button
           onClick={scrollPrev}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-fuchsia-600/20 border border-white/20 hover:border-fuchsia-500/50 shadow-[0_0_20px_rgba(217,70,239,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-fuchsia-500 md:opacity-0 md:group-hover/slider:opacity-100"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-sky-600/20 border border-white/20 hover:border-sky-500/50 shadow-[0_0_20px_rgba(56,189,248,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-sky-500 md:opacity-0 md:group-hover/slider:opacity-100 capitalize"
           aria-label="Scroll left"
         >
           <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 hover:-translate-x-1 transition-transform" />
@@ -133,7 +133,7 @@ export default function ClientVideos() {
 
         <button
           onClick={scrollNext}
-          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-fuchsia-600/20 border border-white/20 hover:border-fuchsia-500/50 shadow-[0_0_20px_rgba(217,70,239,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-fuchsia-500 md:opacity-0 md:group-hover/slider:opacity-100"
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-50 p-2 md:p-4 rounded-full bg-black/40 hover:bg-sky-600/20 border border-white/20 hover:border-sky-500/50 shadow-[0_0_20px_rgba(56,189,248,0.1)] backdrop-blur-md transition-all duration-300 text-white outline-none focus:ring-2 focus:ring-sky-500 md:opacity-0 md:group-hover/slider:opacity-100 capitalize"
           aria-label="Scroll right"
         >
           <ChevronRight className="w-6 h-6 md:w-8 md:h-8 hover:translate-x-1 transition-transform" />
@@ -254,14 +254,14 @@ function VideoPreviewItem({
           }
         }
       }}
-      className={`group relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 transform bg-[#0B1225]/65 backdrop-blur-md shadow-lg border border-white/10 hover:border-fuchsia-400/40 hover:shadow-[0_0_20px_rgba(217,70,239,0.3)]`}
+      className={`group relative w-full aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 transform bg-[#0B1225]/65 backdrop-blur-md shadow-lg border border-white/10 hover:border-sky-400/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.3)]`}
       style={{
         WebkitBackfaceVisibility: "hidden",
         backfaceVisibility: "hidden",
         transform: "translateZ(0)",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/0 via-transparent to-fuchsia-500/0 opacity-0 group-hover:from-fuchsia-500/10 group-hover:to-fuchsia-500/5 transition-opacity duration-500 pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-500/0 via-transparent to-sky-500/0 opacity-0 group-hover:from-sky-500/10 group-hover:to-sky-500/5 transition-opacity duration-500 pointer-events-none z-10" />
 
       {shouldLoad && (
         <video
@@ -280,7 +280,7 @@ function VideoPreviewItem({
         className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none z-30 ${isPlaying ? "opacity-0" : "opacity-100"}`}
       >
         <div
-          className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md shadow-[0_0_30px_rgba(217,70,239,0.5)] border border-fuchsia-400/50 text-white transition-transform"
+          className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-md shadow-[0_0_30px_rgba(56,189,248,0.5)] border border-sky-400/50 text-white transition-transform"
         >
           <Play className="w-8 h-8 md:w-10 md:h-10 ml-2" fill="currentColor" />
         </div>
@@ -291,7 +291,7 @@ function VideoPreviewItem({
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#050816]/90 to-transparent" />
         <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
           <div
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 flex items-center justify-center border border-white/20 hover:border-fuchsia-400/50 hover:bg-fuchsia-600/30 shadow-[0_0_15px_rgba(217,70,239,0.2)] transform transition-all duration-300 backdrop-blur-md pointer-events-auto cursor-pointer"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 flex items-center justify-center border border-white/20 hover:border-sky-400/50 hover:bg-sky-600/30 shadow-[0_0_15px_rgba(56,189,248,0.2)] transform transition-all duration-300 backdrop-blur-md pointer-events-auto cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
               toggleMute();

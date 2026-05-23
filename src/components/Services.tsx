@@ -16,43 +16,43 @@ const services = [
     title: "Short Form Editing",
     icon: Clapperboard,
     features: ["Reels", "Shorts", "TikTok Style"],
-    color: "from-fuchsia-500 to-purple-500",
-    shadow: "shadow-fuchsia-500/20"
+    color: "from-sky-500 to-cyan-500",
+    shadow: "shadow-sky-500/20"
   },
   {
     title: "Long Form Editing",
     icon: MonitorPlay,
     features: ["YouTube Videos", "Podcasts", "Documentary Edits"],
-    color: "from-purple-400 to-fuchsia-500",
-    shadow: "shadow-purple-500/20"
+    color: "from-cyan-400 to-sky-500",
+    shadow: "shadow-cyan-500/20"
   },
   {
     title: "Ads Editing",
     icon: Target,
     features: ["Meta Ads", "Product Promos", "Brand Commercials"],
-    color: "from-purple-500 to-fuchsia-400",
-    shadow: "shadow-fuchsia-500/20"
+    color: "from-cyan-500 to-sky-400",
+    shadow: "shadow-sky-500/20"
   },
   {
     title: "Motion Graphics",
     icon: Wand2,
     features: ["Text Animation", "Logo Animation", "Smooth Transitions"],
-    color: "from-fuchsia-500 to-purple-600",
-    shadow: "shadow-purple-500/20"
+    color: "from-sky-500 to-cyan-600",
+    shadow: "shadow-cyan-500/20"
   },
   {
     title: "Thumbnail Design",
     icon: ImageIcon,
     features: ["High CTR", "Custom Graphics", "A/B Testing Ready"],
-    color: "from-purple-500 to-fuchsia-500",
-    shadow: "shadow-fuchsia-500/20"
+    color: "from-cyan-500 to-sky-500",
+    shadow: "shadow-sky-500/20"
   },
   {
     title: "Social Media Management",
     icon: Share2,
     features: ["Content Strategy", "Scheduling", "Analytics Tracking"],
-    color: "from-fuchsia-400 to-purple-500",
-    shadow: "shadow-purple-500/20"
+    color: "from-sky-400 to-cyan-500",
+    shadow: "shadow-cyan-500/20"
   }
 ];
 
@@ -132,7 +132,7 @@ const TiltCard: React.FC<{ service: typeof services[0], index: number }> = ({ se
             </div>
           </div>
           
-          <h3 className="text-2xl font-bold text-white tracking-tight mb-5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300">
+          <h3 className="text-2xl font-bold text-white tracking-tight mb-5 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all duration-300 capitalize">
             {service.title}
           </h3>
           
@@ -157,7 +157,7 @@ export default function Services() {
   return (
     <section id="services" className="py-32 relative overflow-hidden bg-transparent">
       {/* Subtle Neon Glow for the heading area */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[40%] h-[100px] bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 blur-[50px] pointer-events-none rounded-full" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[40%] h-[100px] bg-gradient-to-r from-sky-500/10 to-cyan-500/10 blur-[50px] pointer-events-none rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
@@ -168,14 +168,14 @@ export default function Services() {
           className="text-center max-w-2xl mx-auto mb-20 relative z-10"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse shadow-[0_0_10px_rgba(217,70,239,0.5)]" />
-            <span className="text-sm font-medium tracking-wide text-neutral-300 uppercase">Our Expertise</span>
+            <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+            <span className="text-sm font-medium tracking-wide text-neutral-300 capitalize">Our Expertise</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-purple-500 drop-shadow-[0_0_10px_rgba(217,70,239,0.2)]">Services</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
+            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">Services</span>
           </h2>
-          <p className="text-lg text-neutral-400 leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
             Elevate your brand with cinematic visuals, seamless storytelling, and high-converting video content tailored for the modern digital landscape.
           </p>
         </motion.div>

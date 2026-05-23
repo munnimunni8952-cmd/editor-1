@@ -32,7 +32,7 @@ export default function App() {
       <JoinTeamModal />
       
       <Navbar />
-      <main className="relative bg-transparent text-white selection:bg-fuchsia-500/30 font-sans overflow-x-hidden w-full">
+      <main className="relative bg-transparent text-white selection:bg-sky-500/30 font-sans overflow-x-hidden w-full">
         <Hero />
         <MyWork />
         <LongFormVideos />
@@ -52,7 +52,7 @@ export default function App() {
         {/* Simple Footer with Logo */}
         <footer className="py-12 border-t border-white/5 relative z-10 backdrop-blur-sm bg-black/50">
           <div className="flex flex-col items-center justify-center gap-6">
-            <a href="#" className="animate-float-logo logo-glow">
+            <a href="#" className="animate-float-logo logo-glow capitalize">
               <img 
                 src="https://i.ibb.co/xKcXKtdx/image.png" 
                 alt="Brand Logo" 
@@ -60,7 +60,7 @@ export default function App() {
               />
             </a>
             <p className="text-gray-500 text-sm font-light">© {new Date().getFullYear()} Trimclipedits</p>
-            <p className="text-gray-600 text-xs mt-2 uppercase tracking-widest font-medium">Website made by Raj Developer</p>
+            <p className="text-gray-600 text-xs mt-2 tracking-widest font-medium">Website made by Raj Developer</p>
           </div>
         </footer>
       </main>
