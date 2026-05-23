@@ -76,7 +76,7 @@ const VideoCard: React.FC<{ videoId: string; index: number }> = ({ videoId, inde
         <h3 className="text-white font-medium text-lg tracking-wide line-clamp-1 group-hover:text-sky-500 transition-colors duration-300 capitalize">
           Cinematic Masterpiece #{index + 1}
         </h3>
-        <p className="text-gray-400 text-sm mt-2 font-light">Premium Editing & Color Grading</p>
+        <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed mt-2">Premium Editing & Color Grading</p>
       </div>
     </motion.div>
   );
@@ -102,16 +102,16 @@ export default function LongFormVideos() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <PlayCircle className="w-4 h-4 text-sky-400" />
-            <span className="text-xs font-semibold tracking-widest text-neutral-300 capitalize">Long Form Content</span>
+            <span className="text-xs font-semibold tracking-widest text-neutral-300 uppercase">Long Form Content</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight flex flex-col sm:flex-row items-center justify-center gap-2 capitalize">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize flex flex-col sm:flex-row items-center justify-center gap-2">
             Premium Cinematic <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)] hover:drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-1000 ease-in-out">Edits</span>
           </h2>
           
           <div className="w-24 h-1 bg-gradient-to-r from-sky-500/50 to-transparent mx-auto mb-8 rounded-full" />
           
-          <p className="text-sm md:text-base text-neutral-400 leading-relaxed font-light">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
             High-quality cinematic edits crafted for creators, brands, and businesses.
           </p>
         </motion.div>

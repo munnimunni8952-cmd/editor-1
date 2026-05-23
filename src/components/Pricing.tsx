@@ -466,14 +466,14 @@ export default function Pricing() {
            transition={{ duration: 0.6 }}
            className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-sm shadow-[0_0_15px_rgba(56,189,248,0.1)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-sky-500 animate-[pulse_2s_ease-in-out_infinite]" />
-            <span className="text-sm font-semibold tracking-wider text-gray-200 capitalize">Premium Creative Services</span>
+            <span className="text-xs font-semibold tracking-widest text-neutral-300 uppercase">Premium Creative Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold capitalize tracking-tight mb-6 text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             Professional Video Editing <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">& Design Solutions</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
             For modern creators and brands looking to elevate their visual identity.
           </p>
         </motion.div>

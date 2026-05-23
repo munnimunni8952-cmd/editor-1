@@ -167,12 +167,12 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-2xl mx-auto mb-20 relative z-10"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
-            <span className="text-sm font-medium tracking-wide text-neutral-300 capitalize">Our Expertise</span>
+            <span className="text-xs font-semibold tracking-widest text-neutral-300 uppercase">Our Expertise</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">Services</span>
           </h2>
           <p className="text-sm md:text-base text-neutral-400 leading-relaxed">

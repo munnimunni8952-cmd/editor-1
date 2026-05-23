@@ -97,7 +97,7 @@ export default function WorkModal() {
               <h3 className="mb-2 text-3xl font-display font-bold tracking-tight text-white flex items-center gap-2 capitalize">
                 Discuss Your Project <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.4)]"></span>
               </h3>
-              <p className="text-sm md:text-base text-gray-400 font-light">Tell us about your next big idea. We specialize in premium cinematic design and development.</p>
+              <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">Tell us about your next big idea. We specialize in premium cinematic design and development.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">

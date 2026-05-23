@@ -89,13 +89,13 @@ export default function MyWork() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center relative z-10"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-bold capitalize tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             My work{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">
               Reels
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
             A collection of my best video projects, showcasing dynamic editing,
             color grading, and visual storytelling.
           </p>

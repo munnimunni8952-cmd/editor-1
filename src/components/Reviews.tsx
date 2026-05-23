@@ -141,10 +141,10 @@ export default function Reviews() {
           className="flex flex-col items-center justify-center gap-6 text-center"
         >
           <div className="flex flex-col items-center">
-            <h2 className="text-4xl md:text-6xl font-display font-bold capitalize tracking-tight mb-4 text-white text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize text-center">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">Reviews</span>
             </h2>
-            <p className="text-gray-400 text-sm md:text-base font-light">Don't just take our word for it.</p>
+            <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">Don't just take our word for it.</p>
           </div>
           
           <div className="flex items-center justify-center gap-4 relative z-50 mt-2">

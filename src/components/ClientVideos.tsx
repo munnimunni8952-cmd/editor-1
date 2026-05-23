@@ -104,7 +104,7 @@ export default function ClientVideos() {
             className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-[40px] pointer-events-none"
           />
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white drop-shadow-lg relative z-10 capitalize">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize drop-shadow-lg relative z-10">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-400">
               Testimonials
             </span>
@@ -115,7 +115,7 @@ export default function ClientVideos() {
               className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-sky-500 to-transparent rounded-full"
             />
           </h2>
-          <p className="text-gray-400 text-sm md:text-base font-light max-w-2xl mx-auto relative z-10 mt-6">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto mt-6 relative z-10">
             Watch Real Client Feedback & Experiences
           </p>
         </motion.div>

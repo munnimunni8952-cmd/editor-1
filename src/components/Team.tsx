@@ -149,17 +149,17 @@ export default function Team() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
-            <span className="text-xs font-semibold tracking-widest text-neutral-300 capitalize">Meet Our Creative Team</span>
+            <span className="text-xs font-semibold tracking-widest text-neutral-300 uppercase">Meet Our Creative Team</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight group capitalize">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">The Creative Minds</span> <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">Behind The Magic</span>
           </h2>
           
           <div className="w-24 h-1 bg-gradient-to-r from-sky-500 to-transparent mx-auto mb-8 rounded-full opacity-50" />
           
-          <p className="text-sm md:text-base text-gray-400 leading-relaxed font-light">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed">
             The Creative Minds Behind Premium Content & Digital Experiences
           </p>
         </motion.div>

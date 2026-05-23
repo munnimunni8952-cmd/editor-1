@@ -61,10 +61,10 @@ export default function PhotoSlider() {
            transition={{ duration: 0.8 }}
            className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white capitalize">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">Studio</span>
           </h2>
-          <p className="text-gray-400 text-sm md:text-base font-light max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
             A glimpse into our creative environment and the process behind the magic.
           </p>
         </motion.div>

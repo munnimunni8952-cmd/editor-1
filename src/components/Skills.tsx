@@ -102,7 +102,7 @@ const SkillCard: React.FC<{ skill: any; index: number }> = ({ skill, index }) =>
         </div>
 
         <h3 className="text-2xl font-bold mb-3 text-white tracking-tight capitalize">{skill.name}</h3>
-        <p className="text-gray-400 text-sm font-light mb-8 flex-grow leading-relaxed">
+        <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed mb-8">
           {skill.description}
         </p>
 
@@ -148,15 +148,15 @@ export default function Skills() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/5 text-xs font-medium tracking-wide text-sky-400 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse" />
-            MY EXPERTISE
+            <span className="text-xs font-semibold tracking-widest text-sky-400 uppercase">MY EXPERTISE</span>
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold capitalize tracking-tight mb-6">
-            Arsenal of <br className="md:hidden" />
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
+            Arsenal <span className="lowercase">of</span> <br className="md:hidden" />
             <span className="bg-gradient-to-r from-sky-400 to-cyan-500 bg-clip-text text-transparent">Capabilities</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-light">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
             Mastery over industry-standard tools combined with cutting-edge AI technologies to deliver fast, stunning, and highly engaging results.
           </p>
         </motion.div>

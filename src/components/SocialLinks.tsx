@@ -50,10 +50,10 @@ export default function SocialLinks() {
           transition={{ duration: 0.8 }}
           className="mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold capitalize tracking-tight mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             Follow Me On <span className="bg-gradient-to-r from-sky-400 to-cyan-500 bg-clip-text text-transparent">Social Media</span>
           </h2>
-          <p className="text-gray-400 text-sm md:text-base font-light mb-8 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto mb-8">
             Stay updated with my latest cinematic edits, behind-the-scenes content, and premium tutorials.
           </p>
         </motion.div>

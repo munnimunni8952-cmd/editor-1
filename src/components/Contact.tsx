@@ -78,7 +78,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="sticky top-32"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold capitalize tracking-tight mb-6 mt-0">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize mt-0">
               Let's Create <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)] hover:drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-1000 ease-in-out">Something Epic</span>
             </h2>
