@@ -68,7 +68,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-3 group capitalize">
           <img 
             src="https://i.ibb.co/xKcXKtdx/image.png" 
-            alt="Brand Logo" 
+            alt="Best Video Editing Agency in Jaipur Rajasthan Logo" 
             className="h-10 w-auto object-contain animate-float-logo logo-glow"
           />
           <span className="font-display font-bold text-xl tracking-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:to-cyan-500 transition-all duration-300">

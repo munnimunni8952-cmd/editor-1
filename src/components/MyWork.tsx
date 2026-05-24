@@ -95,6 +95,7 @@ export default function MyWork() {
               Reels
             </span>
           </h2>
+          <h3 className="sr-only">Professional Cinematic Reel Editing Services Portfolio in Jaipur, Rajasthan</h3>
           <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
             A collection of my best video projects, showcasing dynamic editing,
             color grading, and visual storytelling.

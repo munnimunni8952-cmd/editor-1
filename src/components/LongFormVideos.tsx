@@ -38,7 +38,7 @@ const VideoCard: React.FC<{ videoId: string; index: number }> = ({ videoId, inde
           <>
             <img 
               src={thumbnailUrl} 
-              alt={`Video ${index + 1} Thumbnail`}
+              alt={`Cinematic YouTube Video Editing Example ${index + 1} - Jaipur Rajasthan`}
               loading="lazy"
               className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
@@ -108,6 +108,7 @@ export default function LongFormVideos() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize flex flex-col sm:flex-row items-center justify-center gap-2">
             Premium Cinematic <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)] hover:drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all duration-1000 ease-in-out">Edits</span>
           </h2>
+          <h3 className="sr-only">Hire The Best YouTube Video Editor in Jaipur for Long-Form Content</h3>
           
           <div className="w-24 h-1 bg-gradient-to-r from-sky-500/50 to-transparent mx-auto mb-8 rounded-full" />
           

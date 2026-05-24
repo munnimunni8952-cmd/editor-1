@@ -72,7 +72,9 @@ export default function Hero() {
 
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-5xl mx-auto">
 
-        <motion.h1 
+        <h1 className="sr-only">Best Video Editing Agency In Jaipur, Rajasthan - Cinematic Reel & YouTube Editing</h1>
+        
+        <motion.h2 
           className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold capitalize tracking-tight leading-[1.1] md:leading-[1.1] text-white flex flex-col items-center justify-center text-center w-full min-h-[140px] md:min-h-[220px] mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +82,7 @@ export default function Hero() {
         >
           <span className="mb-2 block uppercase">CRAFTING</span>
           <TypewriterEffect />
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           className="text-sm md:text-base text-gray-400 max-w-2xl mb-12 font-light"
@@ -88,7 +90,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          Professional Video Editor & Digital Creator bringing stories to life with industry-leading post-production techniques, vibrant color grading, and captivating sound design.
+          Professional Video Editing Agency Rajasthan bringing stories to life with industry-leading post-production techniques, vibrant color grading, and captivating motion graphics services in Jaipur.
         </motion.p>
 
         <motion.div

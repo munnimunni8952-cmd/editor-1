@@ -175,6 +175,7 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight capitalize">
             Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-500 drop-shadow-[0_0_10px_rgba(56,189,248,0.2)]">Services</span>
           </h2>
+          <h3 className="sr-only">Cinematic Video Editing & Motion Graphics Services Jaipur</h3>
           <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
             Elevate your brand with cinematic visuals, seamless storytelling, and high-converting video content tailored for the modern digital landscape.
           </p>

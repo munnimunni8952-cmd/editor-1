@@ -90,7 +90,7 @@ export default function PhotoSlider() {
                     <div className="absolute inset-0 overflow-hidden bg-[#050816]">
                        <img 
                          src={photo.image} 
-                         alt={`Studio Image ${index + 1}`}
+                         alt={`Best Video Editing Agency Studio in Jaipur Rajasthan - Behind the Scenes ${index + 1}`}
                          loading="lazy"
                          className="w-full h-full object-cover transition-transform duration-[10s] group-hover/slide:scale-110 ease-out"
                        />
