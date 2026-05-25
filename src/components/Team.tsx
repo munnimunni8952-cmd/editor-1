@@ -4,14 +4,14 @@ import { Instagram, Linkedin, Twitter, CheckCircle2, ArrowRight, Sparkles } from
 
 const teamMembers = [
   {
-    name: "Ankit Sharma",
-    role: "Founder & Creative Head",
-    image: "https://i.ibb.co/9HBSyXY9/Whats-App-Image-2026-05-21-at-1-20-21-PM-2.jpg"
-  },
-  {
     name: "Krishna Sharma",
     role: "Founder & Managing Director",
     image: "https://i.ibb.co/0yTty1g1/Whats-App-Image-2026-05-21-at-1-20-22-PM.jpg"
+  },
+  {
+    name: "Ankit Sharma",
+    role: "Founder & Creative Head",
+    image: "https://i.ibb.co/9HBSyXY9/Whats-App-Image-2026-05-21-at-1-20-21-PM-2.jpg"
   },
   {
     name: "Aman Sharma",
