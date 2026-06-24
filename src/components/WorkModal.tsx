@@ -55,9 +55,10 @@ export default function WorkModal() {
     const message = `Hello, I want to discuss a project.\nName: ${formData.name}\nServices Needed: ${servicesText}\nMessage: ${formData.message || 'N/A'}`;
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649";
     const whatsappUrl = isMobile 
-      ? `whatsapp://send?phone=916377033649&text=${encodeURIComponent(message)}` 
-      : `https://api.whatsapp.com/send?phone=916377033649&text=${encodeURIComponent(message)}`;
+      ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}` 
+      : `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
     setIsOpen(false);

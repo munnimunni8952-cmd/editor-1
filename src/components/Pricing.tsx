@@ -446,9 +446,10 @@ export default function Pricing() {
   const handleOrder = (planName: string) => {
     const text = `Hi, I am interested in the ${planName} plan. Let's discuss details!`;
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649";
     const whatsappUrl = isMobile 
-      ? `whatsapp://send?phone=916377033649&text=${encodeURIComponent(text)}` 
-      : `https://api.whatsapp.com/send?phone=916377033649&text=${encodeURIComponent(text)}`;
+      ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(text)}` 
+      : `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 

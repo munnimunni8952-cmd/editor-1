@@ -54,6 +54,8 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649";
+
   return (
     <>
       <motion.nav 
@@ -84,12 +86,12 @@ export default function Navbar() {
           <a href="#team" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Team</a>
           <a href="#reviews" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Testimonials</a>
           <a href="#pricing" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Pricing</a>
-          <a href="tel:+916377033649" className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Contact</a>
+          <a href={`tel:+${phoneNumber}`} className="hover:text-sky-400 hover:shadow-[0_0_10px_rgba(56,189,248,0.3)] transition-all capitalize">Contact</a>
         </div>
 
         <div className="hidden md:flex items-center gap-4">
           <a 
-            href="tel:+916377033649"
+            href={`tel:+${phoneNumber}`}
             className="text-sm font-bold capitalize tracking-wider px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 hover:border-sky-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(56,189,248,0.18)]"
           >
             Contact Us
@@ -153,13 +155,13 @@ export default function Navbar() {
                 <MobileMenuLink href="#team" onClick={toggleMenu} index={4}>Team</MobileMenuLink>
                 <MobileMenuLink href="#reviews" onClick={toggleMenu} index={5}>Testimonials</MobileMenuLink>
                 <MobileMenuLink href="#pricing" onClick={toggleMenu} index={6}>Pricing</MobileMenuLink>
-                <MobileMenuLink href="tel:+916377033649" onClick={toggleMenu} index={7}>Contact</MobileMenuLink>
+                <MobileMenuLink href={`tel:+${phoneNumber}`} onClick={toggleMenu} index={7}>Contact</MobileMenuLink>
               </div>
 
               {/* Footer CTA */}
               <div className="p-6 mt-auto border-t flex flex-col gap-3" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                 <a 
-                  href="tel:+916377033649"
+                  href={`tel:+${phoneNumber}`}
                   onClick={toggleMenu}
                   className="block w-full text-center text-sm font-bold capitalize tracking-wider px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 hover:bg-white/10 hover:border-sky-500 transition-all duration-300 text-white hover:-translate-y-[3px] hover:shadow-[0_0_20px_rgba(56,189,248,0.18)]"
                 >

@@ -2,9 +2,10 @@ import { Instagram, Facebook, MessageCircle, Youtube, Linkedin } from 'lucide-re
 
 export default function FloatingSocials() {
   const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649";
   const whatsappUrl = isMobile 
-    ? "whatsapp://send?phone=916377033649" 
-    : "https://api.whatsapp.com/send?phone=916377033649";
+    ? `whatsapp://send?phone=${phoneNumber}` 
+    : `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
   return (
     <>

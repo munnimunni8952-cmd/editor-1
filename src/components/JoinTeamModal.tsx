@@ -98,9 +98,10 @@ export default function JoinTeamModal() {
       // 3. Prepare WhatsApp message
       const message = `Hello, I want to join the creative team!\n\nName: ${formData.name}\nPortfolio: ${formData.portfolio || 'Not provided'}\nResume PDF: ${directUrl}`;
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649";
       const whatsappUrl = isMobile 
-        ? `whatsapp://send?phone=916377033649&text=${encodeURIComponent(message)}` 
-        : `https://api.whatsapp.com/send?phone=916377033649&text=${encodeURIComponent(message)}`;
+        ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}` 
+        : `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
       // Delay slightly so the user sees the success state
       setTimeout(() => {

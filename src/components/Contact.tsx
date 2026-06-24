@@ -50,7 +50,7 @@ export default function Contact() {
       const optionsText = selectedOptions.length > 0 ? selectedOptions.join(', ') : 'None specified';
       const message = `Hello, I'd like to discuss a project.\n\nName: ${formData.name}\nLooking to edit: ${optionsText}\nMessage: ${formData.message || 'Not provided'}`;
       // Replace with actual WhatsApp number
-      const phoneNumber = "916377033649"; 
+      const phoneNumber = import.meta.env.VITE_CONTACT_PHONE || "916377033649"; 
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       const whatsappUrl = isMobile 
         ? `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(message)}` 
